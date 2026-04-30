@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,12 +11,16 @@ class DatabaseSeeder extends Seeder
 
     /**
      * Seed the application's database.
+     *
+     * Urutan pemanggilan penting:
+     *   1. AdminUserSeeder   → Buat akun admin default terlebih dahulu
+     *   2. LearningContentSeeder → Isi data modul, lesson, block, dan quiz
      */
     public function run(): void
     {
-        // Jalankan AdminUserSeeder untuk membuat akun admin default
         $this->call([
-            AdminUserSeeder::class,
+            AdminUserSeeder::class,        // Tahap 2: Admin user
+            LearningContentSeeder::class,  // Tahap 6: Konten pembelajaran
         ]);
     }
 }
