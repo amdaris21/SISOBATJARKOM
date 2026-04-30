@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 #[Fillable([
     'lesson_id', 'type', 'title', 'content', 'media_url',
@@ -11,5 +12,30 @@ use Illuminate\Database\Eloquent\Model;
 ])]
 class LessonBlock extends Model
 {
-    //
+    /**
+     * Cast attributes.
+     * 'options' disimpan sebagai JSON di database,
+     * otomatis menjadi array di PHP saat diakses.
+     *
+     * Contoh isi options untuk mini_quiz:
+     * ["Topologi Bus", "Topologi Star", "Topologi Ring"]
+     */
+    protected function casts(): array
+    {
+        return [
+            'options' => 'array',
+        ];
+    }
+
+    // ──────────────────────────────────────────────
+    //  RELATIONSHIPS
+    // ──────────────────────────────────────────────
+
+    /**
+     * Lesson induk dari block ini.
+     */
+    public function lesson(): BelongsTo
+    {
+        return $this->belongsTo(Lesson::class);
+    }
 }
