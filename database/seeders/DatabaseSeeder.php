@@ -18,9 +18,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([
-            AdminUserSeeder::class,        // Tahap 2: Admin user
-            LearningContentSeeder::class,  // Tahap 6: Konten pembelajaran
-        ]);
+        // 1. Akun Admin (Tahap 2)
+        $this->call(AdminUserSeeder::class);
+
+        // 2. Akun User Testing untuk Tugas 9 (Auth Demo)
+        \App\Models\User::updateOrCreate(
+            ['email' => 'tupaikidal@test.com'],
+            [
+                'name' => 'Tupai Kidal',
+                'password' => 'Kambingguling_001', // Otomatis di-hash oleh model
+                'role' => 'user',
+            ]
+        );
+
+        // 3. Konten Pembelajaran (Tahap 6)
+        $this->call(LearningContentSeeder::class);
     }
 }
