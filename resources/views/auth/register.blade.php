@@ -26,8 +26,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[90px] flex items-center justify-between">
             <div class="flex items-center gap-3">
                
-                <div class="w-[60px] h-[60px] bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
-                    <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                <div class="w-[60px] h-[60px] rounded-full overflow-hidden">
+                    <img src="{{ asset('images/Logo2.jpeg') }}"
+                     alt="Logo SISOBATJARKOM"
+                     class="w-full h-full object-cover">
                 </div>
                 <h1 class="text-3xl font-semibold tracking-tight text-[#4E342E]">
                     SISOBAT<span class="text-[#B7131A]">JARKOM</span>
@@ -43,9 +45,10 @@
     
         <div class="w-full max-w-[837px] bg-white border border-[#B8B8B8] shadow-[4px_4px_4px_rgba(0,0,0,0.25)] rounded-[10px] p-8 md:p-14 flex flex-col md:flex-row gap-12 sm:gap-16 items-center justify-center">
             
-            <div class="flex-1 w-full max-w-[337px] aspect-square rounded-[10px] border border-[#B8B8B8] flex items-center justify-center bg-[#fff8f6] p-8 shadow-sm">
-        
-               <svg class="w-32 h-32 text-[#B7131A] opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            <div class="flex-1 w-full max-w-[337px] aspect-square rounded-[10px] border border-[#B8B8B8] bg-gradient-to-br from-[#FFE099] via-[#FFCCCF] to-[#7B574F] shadow-sm overflow-hidden">
+                <img src="{{ asset('images/register.jpeg') }}"
+                    alt="Ilustrasi Register"
+                    class="w-full h-full object-cover">
             </div>
 
             <div class="flex-1 w-full max-w-[337px] bg-white border border-[#B8B8B8] shadow-[0px_4px_4px_rgba(183,19,26,0.5)] rounded-[10px] px-6 py-8">
