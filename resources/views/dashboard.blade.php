@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard - SISOBATJARKOM</title>
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     
-    <!-- Styles / Scripts -->
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @else
@@ -23,20 +21,19 @@
 </head>
 <body class="antialiased text-[#4E342E] min-h-screen flex flex-col">
 
-    <!-- Header / Navbar -->
     <header class="w-full bg-white border-b border-[#B8B8B8] sticky top-0 z-50 h-[88px] flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">
-            <!-- Left: Logo -->
             <div class="flex items-center gap-3">
-                <div class="w-[50px] h-[50px] bg-gray-200 rounded-full flex items-center justify-center overflow-hidden border border-[#B8B8B8]">
-                    <svg class="w-7 h-7 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                <div class="w-[60px] h-[60px] rounded-full overflow-hidden">
+                    <img src="{{ asset('images/Logo2.jpeg') }}"
+                     alt="Logo SISOBATJARKOM"
+                     class="w-full h-full object-cover">
                 </div>
                 <h1 class="text-2xl font-semibold tracking-tight text-[#4E342E]">
                     SISOBAT<span class="text-[#B7131A]">JARKOM</span>
                 </h1>
             </div>
             
-            <!-- Middle: Nav Links (Desktop) -->
             <nav class="hidden md:flex items-center gap-8">
                 <a href="{{ route('dashboard') }}" class="text-[15px] font-medium text-black border-b-2 border-[#B7131A] pb-1">Dashboard</a>
                 <a href="#" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Materi</a>
@@ -45,18 +42,15 @@
                 <a href="#" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Bantuan</a>
             </nav>
 
-            <!-- Right: Icons -->
             <div class="flex items-center gap-4">
                 <button class="text-gray-600 hover:text-black transition">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </button>
                 
-                <!-- Profile & Config Dropdown (AlpineJs required) -->
                 <div x-data="{ open: false }" class="relative">
                     <button @click="open = !open" class="flex items-center justify-center w-10 h-10 border-2 border-black rounded-full text-black hover:bg-gray-100 transition focus:outline-none overflow-hidden">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                     </button>
-                    <!-- Dropdown Content -->
                     <div x-show="open" @click.outside="open = false" style="display: none;" class="absolute right-0 mt-2 w-48 bg-white border border-[#B8B8B8] shadow-lg rounded-[10px] py-1 z-50">
                         <div class="px-4 py-2 border-b border-gray-100">
                             <span class="block text-sm font-medium text-black truncate">{{ Auth::user()->name }}</span>
@@ -75,17 +69,13 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="flex-grow w-full pb-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <!-- Section 1: DASHBOARD -->
             <div class="flex items-center gap-4 mt-12 mb-8">
                 <h2 class="text-xl md:text-[22px] font-semibold tracking-wide text-black uppercase">DASHBOARD</h2>
                 <div class="flex-grow h-px bg-[#B8B8B8]"></div>
             </div>
-
-            <!-- Hero Welcome Card -->
             <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-8 md:p-12 flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16 relative overflow-hidden">
                 <div class="flex-1 space-y-5 z-10">
                     <span class="inline-block px-4 py-1.5 bg-[#FFE099] border border-[#855D00] text-[#7B574F] rounded-[8px] text-[13px] font-medium shadow-sm">
@@ -111,24 +101,24 @@
                     </div>
                 </div>
                 <div class="flex-1 w-full flex justify-center md:justify-end z-10">
-                    <!-- Illustration Placeholder -->
-                    <div class="w-full max-w-[340px] aspect-[4/3] bg-gradient-to-br from-[#FFE099] via-[#FFCCCF] to-[#7B574F] border border-[#B8B8B8] rounded-[12px] shadow-sm flex items-center justify-center p-6 relative overflow-hidden">
-                        <svg class="w-32 h-32 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            
+                    <div class="relative w-full max-w-[340px] aspect-[4/3] rounded-[12px] overflow-hidden border border-[#B8B8B8] shadow-sm">
+                        <img src="{{ asset('images/LP1.jpeg') }}"
+                            alt="Ilustrasi Dashboard"
+                            class="w-full h-full object-cover">
+\
                         <div class="absolute w-24 h-24 bg-yellow-300 rounded-full blur-2xl opacity-40 top-4 right-4"></div>
                         <div class="absolute w-24 h-24 bg-red-400 rounded-full blur-2xl opacity-40 bottom-4 left-4"></div>
-                        <span class="absolute text-white font-medium drop-shadow-md">Networking Concept Placeholder</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Section: PROGRES KAMU -->
             <div class="flex items-center gap-4 mt-16 mb-8">
                 <h2 class="text-xl md:text-[20px] font-semibold tracking-wide text-black uppercase">PROGRES KAMU</h2>
                 <div class="flex-grow h-px bg-[#B8B8B8]"></div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <!-- Card Materi Selesai -->
                 <div class="bg-white border border-[#B8B8B8] shadow-sm rounded-[10px] p-6 flex flex-row items-center gap-6 relative overflow-hidden">
                     <div class="w-16 h-16 shrink-0 bg-[#FFE099] rounded-[10px] flex items-center justify-center border border-[#855D00] shadow-sm relative">
                         <span class="text-3xl drop-shadow-sm">📚</span>
@@ -140,7 +130,6 @@
                     </div>
                 </div>
 
-                <!-- Card Quiz Selesai -->
                 <div class="bg-white border border-[#B8B8B8] shadow-sm rounded-[10px] p-6 flex flex-row items-center gap-6 relative overflow-hidden">
                     <div class="w-16 h-16 shrink-0 bg-[#FFD7BA] rounded-[10px] flex items-center justify-center border border-[#A66036] shadow-sm relative">
                         <span class="text-3xl drop-shadow-sm">📝</span>
@@ -153,14 +142,13 @@
                 </div>
             </div>
 
-            <!-- Section: JELAJAHI FITUR UTAMA -->
             <div class="flex items-center gap-4 mt-16 mb-8">
                 <h2 class="text-xl md:text-[20px] font-semibold tracking-wide text-black uppercase">JELAJAHI FITUR UTAMA</h2>
                 <div class="flex-grow h-px bg-[#B8B8B8]"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card Materi -->
+
                 <a href="#" class="group block relative bg-white border border-[#B8B8B8] rounded-[10px] p-8 shadow-[0_10px_0_0_#D69600] hover:-translate-y-1 transition-transform min-h-[200px]">
                     <div class="w-[50px] h-[50px] bg-[#FFE099] rounded-[14px] flex items-center justify-center mb-5 shrink-0">
                         <svg class="w-7 h-7 text-white stroke-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
@@ -174,7 +162,6 @@
                     </div>
                 </a>
 
-                <!-- Card Quiz -->
                 <a href="#" class="group block relative bg-white border border-[#B8B8B8] rounded-[10px] p-8 shadow-[0_10px_0_0_#A10C13] hover:-translate-y-1 transition-transform min-h-[200px]">
                     <div class="w-[50px] h-[50px] bg-[#FFCCCF] rounded-[14px] flex items-center justify-center mb-5 shrink-0">
                         <svg class="w-7 h-7 text-[#B7131A] stroke-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
@@ -188,7 +175,6 @@
                     </div>
                 </a>
 
-                <!-- Card Bantuan -->
                 <a href="#" class="group block relative bg-white border border-[#B8B8B8] rounded-[10px] p-8 shadow-[0_10px_0_0_#4E342E] hover:-translate-y-1 transition-transform min-h-[200px]">
                     <div class="w-[50px] h-[50px] bg-[#D9C1BC] rounded-[14px] flex items-center justify-center mb-5 shrink-0">
                         <svg class="w-7 h-7 text-white stroke-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -205,7 +191,6 @@
         </div>
     </main>
 
-    <!-- GET TO KNOW US Section -->
     <section class="w-full bg-gradient-to-b from-[#FFC233] via-[#F8D279] to-[#EFE4CA] py-20 text-center">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center">
             <h2 class="text-[24px] md:text-[28px] font-medium text-[#7B574F] mb-4">GET TO KNOW US</h2>
@@ -219,7 +204,7 @@
         </div>
     </section>
 
-    <!-- Testimonial Section -->
+
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full mb-10">
         <div class="flex items-center gap-6 mb-12">
             <h2 class="text-[22px] md:text-[24px] font-semibold whitespace-nowrap text-black">Apa Kata Mereka ?</h2>
@@ -227,12 +212,12 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:px-8 mb-4">
-            <!-- Card 1 -->
+
             <div class="bg-white border border-[#B8B8B8] p-8 rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] border-l-[3px] border-l-[#B7131A] min-h-[160px] flex flex-col justify-center">
                 <h4 class="text-[#B7131A] font-medium text-[16px] mb-3">~ Gaon</h4>
                 <p class="text-[14px] text-black leading-[20px]">"Asli review jujur, saya sekali belajar disini langsung paham. Bahasanya mudah banget buat dipahami 🤩"</p>
             </div>
-            <!-- Card 2 -->
+
             <div class="bg-white border border-[#B8B8B8] p-8 rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] border-l-[3px] border-l-[#B7131A] min-h-[160px] flex flex-col justify-center">
                 <h4 class="text-[#B7131A] font-medium text-[16px] mb-3">~ MinjeongKimm</h4>
                 <p class="text-[14px] text-black leading-[20px]">"Makasih developer udah buat web belajar dasar-dasar jarkom sekeren inii, BINTANG ⭐⭐⭐⭐⭐"</p>
@@ -245,7 +230,6 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
     <footer class="w-full bg-[rgba(92,64,0,0.09)] border-t border-[#B8B8B8] pt-16 pb-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -256,8 +240,7 @@
                     </h1>
                     <p class="text-[#B7131A] text-[16px] md:text-[18px] mt-6">"Klik, Belajar, Paham Jaringan"</p>
                 </div>
-                
-                <!-- Col 2 -->
+
                 <div class="flex flex-col">
                     <h3 class="text-[#4E342E] text-[16px] font-medium mb-3">Diskusi Lebih Lanjut?</h3>
                     <a href="#" class="inline-flex items-center gap-3 bg-white border border-[#B8B8B8] rounded-full pl-1 pr-6 py-1 mb-6 hover:bg-gray-50 transition self-start shadow-sm">
@@ -276,7 +259,6 @@
                     </a>
                 </div>
                 
-                <!-- Col 3 -->
                 <div>
                     <h3 class="text-[#4E342E] text-[16px] font-medium mb-3">Tentang Kami</h3>
                     <p class="text-[#7B7675] text-[14px] leading-[18px] mb-5 max-w-[200px]">
@@ -286,8 +268,7 @@
                         Selengkapnya <span class="text-xl leading-none">&rarr;</span>
                     </a>
                 </div>
-                
-                <!-- Col 4 -->
+
                 <div>
                     <h3 class="text-[#4E342E] text-[16px] font-medium mb-3">Sosial Media</h3>
                     <div class="flex gap-4">
