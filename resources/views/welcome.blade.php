@@ -6,7 +6,6 @@
 
     <title>SISOBATJARKOM</title>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
@@ -29,8 +28,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[90px] flex items-center justify-between">
             <div class="flex items-center gap-3">
                 
-                <div class="w-[60px] h-[60px] bg-gray-200 rounded-full flex items-center justify-center overflow-hidden">
-                    <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                <div class="w-[60px] h-[60px] rounded-full overflow-hidden">
+                    <img src="{{ asset('images/Logo2.jpeg') }}"
+                     alt="Logo SISOBATJARKOM"
+                     class="w-full h-full object-cover">
                 </div>
                 <h1 class="text-3xl font-semibold tracking-tight text-[#4E342E]">
                     SISOBAT<span class="text-[#B7131A]">JARKOM</span>
@@ -64,8 +65,8 @@
             </div>
             <div class="flex-1 w-full flex justify-center md:justify-end">
               
-                <div class="w-full max-w-sm aspect-square bg-gray-50 rounded-[10px] border border-[#B8B8B8] flex items-center justify-center text-gray-400 p-8">
-                    <svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <div class="w-full max-w-sm aspect-square rounded-[10px] flex items-center justify-center overflow-hidden">
+                    <img src="{{ asset('images/LP1.jpeg') }}" alt="Ilustrasi Dasar Jaringan" class="w-full h-full object-contain" />
                 </div>
             </div>
         </div>
@@ -105,7 +106,6 @@
                 </div>
             </a>
 
-            <!-- Card Bantuan & FAQ -->
             <a href="{{ route('login') }}" class="group block relative bg-white border border-[#B8B8B8] rounded-[10px] p-8 shadow-[0_10px_0_0_#4E342E] hover:-translate-y-1 transition-transform min-h-[250px]">
                 <div class="w-[60px] h-[60px] bg-[#D9C1BC] rounded-[20px] flex items-center justify-center mb-6">
                     <svg class="w-8 h-8 text-white stroke-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -125,9 +125,10 @@
         <div class="bg-white border border-[#B8B8B8] rounded-[10px] shadow-[4px_4px_4px_rgba(0,0,0,0.25)] p-8 md:p-14 flex flex-col md:flex-row items-center gap-12">
             <div class="flex-1 w-full flex justify-center order-2 md:order-1">
                 
-                <div class="w-full max-w-sm aspect-square bg-[#fff8f6] rounded-[10px] border border-[#D9C1BC] flex items-center justify-center text-[#7B574F]">
-                    <svg class="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                <div class="w-full max-w-sm rounded-[10px] border border-[#D9C1BC] overflow-hidden">
+                   <img src="{{ asset('images/LP2.jpeg') }}" alt="Ilustrasi Filosofi" class="w-full h-full object-contain" />
                 </div>
+                
             </div>
             <div class="flex-[1.5] space-y-6 order-1 md:order-2">
                 <div class="inline-block bg-[#FFE099] border border-[#855D00] text-[#7B574F] px-4 py-1.5 rounded-[10px] text-sm md:text-base font-medium">
