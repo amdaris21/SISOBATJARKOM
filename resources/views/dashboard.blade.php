@@ -36,7 +36,7 @@
             
             <nav class="hidden md:flex items-center gap-8">
                 <a href="{{ route('dashboard') }}" class="text-[15px] font-medium text-black border-b-2 border-[#B7131A] pb-1">Dashboard</a>
-                <a href="#" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Materi</a>
+                <a href="/lesson" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Materi</a>
                 <a href="#" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Kuis</a>
                 <a href="#" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Tentang</a>
                 <a href="#" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Bantuan</a>
@@ -89,7 +89,7 @@
                         Lanjutkan perjalanan belajarmu di SISOBATJARKOM. Materi dasar jaringan dan quiz siap membantumu belajar.
                     </p>
                     <div class="flex flex-wrap gap-4 pt-3">
-                        <a href="#" class="inline-flex items-center gap-2 px-6 py-2 bg-[#B7131A] border-2 border-[#7F1010] text-white rounded-full font-medium text-[14px] hover:bg-[#8A070D] transition shadow-sm">
+                        <a href="/lesson" class="inline-flex items-center gap-2 px-6 py-2 bg-[#B7131A] border-2 border-[#7F1010] text-white rounded-full font-medium text-[14px] hover:bg-[#8A070D] transition shadow-sm">
                             Baca Materi 
                             <span class="p-0.5 bg-white rounded-full flex items-center justify-center">
                                 <svg class="w-3 h-3 text-[#B7131A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
@@ -149,7 +149,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                <a href="#" class="group block relative bg-white border border-[#B8B8B8] rounded-[10px] p-8 shadow-[0_10px_0_0_#D69600] hover:-translate-y-1 transition-transform min-h-[200px]">
+                <a href="/lesson" class="group block relative bg-white border border-[#B8B8B8] rounded-[10px] p-8 shadow-[0_10px_0_0_#D69600] hover:-translate-y-1 transition-transform min-h-[200px]">
                     <div class="w-[50px] h-[50px] bg-[#FFE099] rounded-[14px] flex items-center justify-center mb-5 shrink-0">
                         <svg class="w-7 h-7 text-white stroke-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                     </div>
