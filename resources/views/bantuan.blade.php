@@ -50,12 +50,12 @@
                 </h1>
             </div>
             
-            <nav class="hidden md:flex items-center gap-8">
+            <nav class="flex items-center gap-8 z-20">
                 <a href="{{ route('dashboard') }}" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Dashboard</a>
                 <a href="/lesson" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Materi</a>
                 <a href="{{ route('quiz') }}" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Kuis</a>
                 <a href="{{ route('about') }}" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Tentang</a>
-                <a href="#" class="text-[15px] font-medium text-black border-b-2 border-[#B7131A] pb-1">Bantuan</a>
+                <a href="{{ route('bantuan') }}" class="text-[15px] font-medium text-black border-b-2 border-[#B7131A] pb-1 cursor-pointer">Bantuan</a>
             </nav>
 
             <div class="flex items-center gap-4">
@@ -67,7 +67,9 @@
                     <button @click="open = !open" class="flex items-center justify-center w-10 h-10 border-2 border-black rounded-full text-black hover:bg-gray-100 transition focus:outline-none overflow-hidden">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                     </button>
-                    <div x-show="open" @click.outside="open = false" style="display: none;" class="absolute right-0 mt-2 w-48 bg-white border border-[#B8B8B8] shadow-lg rounded-[10px] py-1 z-50">
+                    <div x-show="open" @click.outside="open = false"
+     class="absolute right-0 mt-2 w-48 bg-white border border-[#B8B8B8] 
+            shadow-lg rounded-[10px] py-1 z-10">
                         <div class="px-4 py-2 border-b border-gray-100">
                             <span class="block text-sm font-medium text-black truncate">{{ Auth::user()->name ?? 'User' }}</span>
                             <span class="block text-xs text-gray-500 truncate">{{ Auth::user()->email ?? 'email@example.com' }}</span>

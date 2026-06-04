@@ -40,7 +40,7 @@
                 <a href="/lesson" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Materi</a>
                 <a href="{{ route('quiz') }}" class="text-[15px] font-medium text-black border-b-2 border-[#B7131A] pb-1">Kuis</a>
                 <a href="{{ route('about') }}" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Tentang</a>
-                <a href="#" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Bantuan</a>
+                <a href="{{ route('bantuan') }}" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Bantuan</a>
             </nav>
 
             <div class="flex items-center gap-4">

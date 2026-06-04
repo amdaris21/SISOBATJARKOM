@@ -28,6 +28,10 @@ Route::get('/quiz', function () {
     return view('quiz');
 })->middleware(['auth', 'verified'])->name('quiz');
 
+Route::get('/bantuan', function () {
+    return view('bantuan');
+})->middleware(['auth', 'verified'])->name('bantuan');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
