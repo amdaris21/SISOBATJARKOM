@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kelola Materi - Admin SISOBATJARKOM</title>
+    <title>Kelola Quiz - Admin SISOBATJARKOM</title>
     
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -39,8 +39,8 @@
             
             <nav class="hidden md:flex items-center gap-8">
                 <a href="{{ route('admin.dashboard') }}" class="text-[15px] font-medium text-gray-700 hover:text-black transition">Dashboard</a>
-                <a href="{{ route('admin.kelolamateri') }}" class="text-[15px] font-medium text-black border-b-2 border-[#B7131A] pb-1">Kelola Materi</a>
-                <a href="{{ route('admin.kelolaquiz') }}" class="text-[15px] font-medium text-gray-700 hover:text-black transition">Kelola Kuis</a>
+                <a href="{{ route('admin.kelolamateri') }}" class="text-[15px] font-medium text-gray-700 hover:text-black transition">Kelola Materi</a>
+                <a href="{{ route('admin.kelolaquiz') }}" class="text-[15px] font-medium text-black border-b-2 border-[#B7131A] pb-1">Kelola Kuis</a>
             </nav>
 
             <div class="flex items-center gap-4">
@@ -75,20 +75,19 @@
                 <div class="max-w-xl z-10">
                     <h2 class="text-[36px] md:text-[48px] lg:text-[56px] leading-[1.1] text-[#4E342E] mb-2 font-normal tracking-tight">
                         Manajemen<br/>
-                        <span class="text-[#B7131A]">Materi</span><br/>
-                        <span class="text-[#B7131A]">Pembelajaran</span>
+                        <span class="text-[#B7131A]">Quiz</span>
                     </h2>
                 </div>
                 <div class="mt-6 md:mt-0 flex-shrink-0 w-[200px] h-[200px] md:w-[260px] md:h-[260px] mr-0 md:mr-4 lg:mr-8">
-                    <img src="{{ asset('images/kelolamateri.png') }}" alt="Ilustrasi Materi" class="w-full h-full object-contain mix-blend-multiply hover:scale-105 transition-transform duration-300">
+                    <img src="{{ asset('images/quiz_banner.png') }}" alt="Ilustrasi Quiz" class="w-full h-full object-contain mix-blend-multiply hover:scale-105 transition-transform duration-300">
                 </div>
             </div>
 
             <div class="mb-8">
                 <h2 class="text-[24px] md:text-[28px] font-normal text-[#4E342E] mb-2 leading-tight tracking-tight">
-                    Manajemen <span class="text-[#B7131A]">Materi Pembelajaran</span>
+                    Manajemen <span class="text-[#B7131A]">Quiz</span>
                 </h2>
-                <p class="text-[#CAC7C6] text-[15px] md:text-[16px]">Semua Materi tersedia dalam sistem admin anda</p>
+                <p class="text-[#CAC7C6] text-[15px] md:text-[16px]">Tambahkan soal dan kelola kuis pembelajaran dalam sistem admin Anda</p>
             </div>
 
             <div class="mb-8">
@@ -96,23 +95,23 @@
                     <div class="w-6 h-6 rounded-full border-[2px] border-white flex items-center justify-center group-hover:rotate-90 transition-transform duration-300">
                         <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>
                     </div>
-                    <span class="text-[16px] md:text-[18px]">Tambah Materi</span>
+                    <span class="text-[16px] md:text-[18px]">Tambah Quiz</span>
                 </button>
             </div>
 
             <div class="w-full bg-white border border-[#CAC7C6] rounded-[15px] overflow-hidden shadow-sm">
                 <div class="bg-[#B7131A] px-6 py-4 flex items-center justify-between text-white border-b border-[#CAC7C6]">
-                    <div class="w-5/12 text-[15px] md:text-[16px] font-medium">Materi</div>
-                    <div class="w-2/12 text-[15px] md:text-[16px] font-medium text-center">Kategori</div>
+                    <div class="w-5/12 text-[15px] md:text-[16px] font-medium">Nama Quiz</div>
+                    <div class="w-2/12 text-[15px] md:text-[16px] font-medium text-center">Jumlah Soal</div>
                     <div class="w-2/12 text-[15px] md:text-[16px] font-medium text-center">Level</div>
                     <div class="w-3/12 text-[15px] md:text-[16px] font-medium text-center">Aksi</div>
                 </div>
 
                 <div class="flex flex-col">
                     <div class="px-6 py-4 flex items-center justify-between border-b border-[#AFABAA] hover:bg-red-50 transition-colors group cursor-default">
-                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Materi Pembelajaran Jaringan Komputer</div>
+                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Quiz Pembelajaran Jaringan Komputer</div>
                         <div class="w-2/12 flex justify-center">
-                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Dasar</span>
+                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">10 Soal</span>
                         </div>
                         <div class="w-2/12 flex justify-center">
                             <span class="bg-[#CAFCDF] border border-white text-[#30D46F] font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Easy</span>
@@ -130,9 +129,9 @@
                     </div>
                     
                     <div class="px-6 py-4 flex items-center justify-between border-b border-[#AFABAA] hover:bg-red-50 transition-colors group cursor-default">
-                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Materi 7 Osi Layer</div>
+                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Quiz 7 Osi Layer</div>
                         <div class="w-2/12 flex justify-center">
-                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Dasar</span>
+                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">10 Soal</span>
                         </div>
                         <div class="w-2/12 flex justify-center">
                             <span class="bg-[#FCE7CA] border border-white text-[#D27634] font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Medium</span>
@@ -150,9 +149,9 @@
                     </div>
                     
                     <div class="px-6 py-4 flex items-center justify-between border-b border-[#AFABAA] hover:bg-red-50 transition-colors group cursor-default">
-                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">HTTP, HTTPS FTP & DNS</div>
+                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Quiz HTTP, HTTPS FTP & DNS</div>
                         <div class="w-2/12 flex justify-center">
-                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Dasar</span>
+                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">10 Soal</span>
                         </div>
                         <div class="w-2/12 flex justify-center">
                             <span class="bg-[#FCE7CA] border border-white text-[#D27634] font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Medium</span>
@@ -170,90 +169,9 @@
                     </div>
                     
                     <div class="px-6 py-4 flex items-center justify-between border-b border-[#AFABAA] hover:bg-red-50 transition-colors group cursor-default">
-                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Materi Topologi Jaringan</div>
+                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Quiz Topologi Jaringan</div>
                         <div class="w-2/12 flex justify-center">
-                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Topologi</span>
-                        </div>
-                        <div class="w-2/12 flex justify-center">
-                            <span class="bg-[#CAFCDF] border border-white text-[#30D46F] font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Easy</span>
-                        </div>
-                        <div class="w-3/12 flex justify-center items-center gap-4">
-                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
-                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-blue-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                                <span class="text-[12px] text-black group-hover/btn:text-blue-600 mt-0.5">Edit</span>
-                            </button>
-                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
-                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-red-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                                <span class="text-[12px] text-black group-hover/btn:text-red-600 mt-0.5">Hapus</span>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="px-6 py-4 flex items-center justify-between border-b border-[#AFABAA] hover:bg-red-50 transition-colors group cursor-default">
-                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Perangkat Jaringan Komputer</div>
-                        <div class="w-2/12 flex justify-center">
-                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Teori</span>
-                        </div>
-                        <div class="w-2/12 flex justify-center">
-                            <span class="bg-[#FCCACA] border border-white text-[#D23434] font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Hard</span>
-                        </div>
-                        <div class="w-3/12 flex justify-center items-center gap-4">
-                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
-                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-blue-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                                <span class="text-[12px] text-black group-hover/btn:text-blue-600 mt-0.5">Edit</span>
-                            </button>
-                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
-                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-red-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                                <span class="text-[12px] text-black group-hover/btn:text-red-600 mt-0.5">Hapus</span>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="px-6 py-4 flex items-center justify-between border-b border-[#AFABAA] hover:bg-red-50 transition-colors group cursor-default">
-                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Keamanan Jaringan Dasar</div>
-                        <div class="w-2/12 flex justify-center">
-                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Dasar</span>
-                        </div>
-                        <div class="w-2/12 flex justify-center">
-                            <span class="bg-[#FCCACA] border border-white text-[#D23434] font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Hard</span>
-                        </div>
-                        <div class="w-3/12 flex justify-center items-center gap-4">
-                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
-                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-blue-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                                <span class="text-[12px] text-black group-hover/btn:text-blue-600 mt-0.5">Edit</span>
-                            </button>
-                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
-                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-red-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                                <span class="text-[12px] text-black group-hover/btn:text-red-600 mt-0.5">Hapus</span>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Row 7 -->
-                    <div class="px-6 py-4 flex items-center justify-between border-b border-[#AFABAA] hover:bg-red-50 transition-colors group cursor-default">
-                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Jenis-jenis Jaringan Komputer</div>
-                        <div class="w-2/12 flex justify-center">
-                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Dasar</span>
-                        </div>
-                        <div class="w-2/12 flex justify-center">
-                            <span class="bg-[#FCCACA] border border-white text-[#D23434] font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Hard</span>
-                        </div>
-                        <div class="w-3/12 flex justify-center items-center gap-4">
-                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
-                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-blue-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                                <span class="text-[12px] text-black group-hover/btn:text-blue-600 mt-0.5">Edit</span>
-                            </button>
-                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
-                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-red-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
-                                <span class="text-[12px] text-black group-hover/btn:text-red-600 mt-0.5">Hapus</span>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="px-6 py-4 flex items-center justify-between border-b border-[#AFABAA] hover:bg-red-50 transition-colors group cursor-default">
-                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Arsitektur Komputer</div>
-                        <div class="w-2/12 flex justify-center">
-                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Teori</span>
+                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">10 Soal</span>
                         </div>
                         <div class="w-2/12 flex justify-center">
                             <span class="bg-[#CAFCDF] border border-white text-[#30D46F] font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Easy</span>
@@ -270,11 +188,90 @@
                         </div>
                     </div>
                     
-                    <!-- Row 9 -->
+                    <div class="px-6 py-4 flex items-center justify-between border-b border-[#AFABAA] hover:bg-red-50 transition-colors group cursor-default">
+                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Quiz Perangkat Jaringan Komputer</div>
+                        <div class="w-2/12 flex justify-center">
+                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">10 Soal</span>
+                        </div>
+                        <div class="w-2/12 flex justify-center">
+                            <span class="bg-[#FCCACA] border border-white text-[#D23434] font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Hard</span>
+                        </div>
+                        <div class="w-3/12 flex justify-center items-center gap-4">
+                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
+                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-blue-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                                <span class="text-[12px] text-black group-hover/btn:text-blue-600 mt-0.5">Edit</span>
+                            </button>
+                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
+                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-red-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                <span class="text-[12px] text-black group-hover/btn:text-red-600 mt-0.5">Hapus</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="px-6 py-4 flex items-center justify-between border-b border-[#AFABAA] hover:bg-red-50 transition-colors group cursor-default">
+                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Quiz Keamanan Jaringan Dasar</div>
+                        <div class="w-2/12 flex justify-center">
+                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">10 Soal</span>
+                        </div>
+                        <div class="w-2/12 flex justify-center">
+                            <span class="bg-[#FCCACA] border border-white text-[#D23434] font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Hard</span>
+                        </div>
+                        <div class="w-3/12 flex justify-center items-center gap-4">
+                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
+                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-blue-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                                <span class="text-[12px] text-black group-hover/btn:text-blue-600 mt-0.5">Edit</span>
+                            </button>
+                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
+                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-red-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                <span class="text-[12px] text-black group-hover/btn:text-red-600 mt-0.5">Hapus</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="px-6 py-4 flex items-center justify-between border-b border-[#AFABAA] hover:bg-red-50 transition-colors group cursor-default">
+                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Quiz Jenis-jenis Jaringan Komputer</div>
+                        <div class="w-2/12 flex justify-center">
+                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">10 Soal</span>
+                        </div>
+                        <div class="w-2/12 flex justify-center">
+                            <span class="bg-[#FCCACA] border border-white text-[#D23434] font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Hard</span>
+                        </div>
+                        <div class="w-3/12 flex justify-center items-center gap-4">
+                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
+                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-blue-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                                <span class="text-[12px] text-black group-hover/btn:text-blue-600 mt-0.5">Edit</span>
+                            </button>
+                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
+                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-red-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                <span class="text-[12px] text-black group-hover/btn:text-red-600 mt-0.5">Hapus</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="px-6 py-4 flex items-center justify-between border-b border-[#AFABAA] hover:bg-red-50 transition-colors group cursor-default">
+                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Quiz Arsitektur Komputer</div>
+                        <div class="w-2/12 flex justify-center">
+                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">10 Soal</span>
+                        </div>
+                        <div class="w-2/12 flex justify-center">
+                            <span class="bg-[#CAFCDF] border border-white text-[#30D46F] font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Easy</span>
+                        </div>
+                        <div class="w-3/12 flex justify-center items-center gap-4">
+                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
+                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-blue-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                                <span class="text-[12px] text-black group-hover/btn:text-blue-600 mt-0.5">Edit</span>
+                            </button>
+                            <button class="flex flex-col items-center group/btn hover:-translate-y-0.5 transition-transform">
+                                <svg class="w-5 h-5 text-[#1E1E1E] group-hover/btn:text-red-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                <span class="text-[12px] text-black group-hover/btn:text-red-600 mt-0.5">Hapus</span>
+                            </button>
+                        </div>
+                    </div>
+                    
                     <div class="px-6 py-4 flex items-center justify-between hover:bg-red-50 transition-colors group cursor-default">
-                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">TCP/IP & Alamat IP</div>
+                        <div class="w-5/12 text-[14px] md:text-[15px] text-black">Quiz TCP/IP & Alamat IP</div>
                         <div class="w-2/12 flex justify-center">
-                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Dasar</span>
+                            <span class="bg-[#C9373F] border border-white text-white font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">10 Soal</span>
                         </div>
                         <div class="w-2/12 flex justify-center">
                             <span class="bg-[#FCE7CA] border border-white text-[#D27634] font-josefin font-bold text-[12px] px-4 py-1 rounded-[12px]">Medium</span>
@@ -293,23 +290,20 @@
                 </div>
             </div>
 
-            <!-- Modal Tambah Materi Baru -->
             <div x-show="isModalOpen" style="display: none;" class="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-40 px-4 py-4">
                 <div @click.outside="isModalOpen = false" class="bg-white rounded-[10px] w-full max-w-xl p-5 md:p-6 relative max-h-[90vh] overflow-y-auto" style="border: 1px solid #A5A5A5; box-shadow: 0px 4px 4px #B7131A;">
                     
-                    <h2 class="text-[18px] md:text-[22px] text-[#4E342E] mb-4 font-normal tracking-tight">Tambah <span class="text-[#B7131A]">Materi Baru</span></h2>
+                    <h2 class="text-[18px] md:text-[22px] text-[#4E342E] mb-4 font-normal tracking-tight">Tambah <span class="text-[#B7131A]">Link Quiz</span></h2>
 
                     <form action="#" method="POST">
-                        <!-- Nama Materi Baru -->
                         <div class="mb-3">
-                            <label class="block text-[13px] md:text-[14px] text-[#4E342E] mb-1 font-normal">Nama <span class="text-[#B7131A]">Materi Baru</span></label>
+                            <label class="block text-[13px] md:text-[14px] text-[#4E342E] mb-1 font-normal">Nama <span class="text-[#B7131A]">Quiz</span></label>
                             <input type="text" class="w-full bg-white border border-[#B8B8B8] rounded-[8px] h-[38px] md:h-[42px] px-4 text-[13px] md:text-[14px] focus:outline-none focus:border-[#B7131A] shadow-[0px_2px_4px_#E2E2E2]">
                         </div>
 
-                        <!-- Kategori dan Level -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
                             <div>
-                                <label class="block text-[13px] md:text-[14px] text-[#4E342E] mb-1 font-normal">Kategori</label>
+                                <label class="block text-[13px] md:text-[14px] text-[#4E342E] mb-1 font-normal">Jumlah Soal</label>
                                 <input type="text" class="w-full bg-white border border-[#A5A5A5] rounded-[8px] h-[38px] md:h-[42px] px-4 text-[13px] md:text-[14px] focus:outline-none focus:border-[#B7131A] shadow-[0px_2px_4px_#E2E2E2]">
                             </div>
                             <div>
@@ -318,24 +312,35 @@
                             </div>
                         </div>
 
-                        <!-- Deskripsi Materi Baru -->
                         <div class="mb-3">
-                            <label class="block text-[13px] md:text-[14px] text-[#4E342E] mb-1 font-normal">Deskripsi <span class="text-[#B7131A]">Materi Baru</span></label>
+                            <label class="block text-[13px] md:text-[14px] text-[#4E342E] mb-1 font-normal">Deskripsi <span class="text-[#B7131A]">Quiz</span></label>
                             <textarea class="w-full bg-white border border-[#A5A5A5] rounded-[8px] h-[80px] md:h-[100px] p-3 text-[13px] md:text-[14px] resize-none focus:outline-none focus:border-[#B7131A] shadow-[0px_2px_4px_#E2E2E2]"></textarea>
                         </div>
 
-                        <!-- Unggah File Baru -->
-                        <div class="mb-6">
-                            <button type="button" class="bg-white border border-[#B8B8B8] rounded-[8px] h-[38px] md:h-[42px] px-4 flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors shadow-[0px_2px_4px_#E2E2E2] w-full md:w-[180px]">
-                                <svg class="w-4 h-4 text-[#1E1E1E]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                                <span class="text-[13px] md:text-[14px] text-[#4E342E]">Unggah File Baru</span>
-                            </button>
-                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6 mb-2">
+                            <div class="flex flex-col gap-4">
+                                <div>
+                                    <label class="block text-[13px] md:text-[14px] text-[#4E342E] mb-1 font-normal">Link <span class="text-[#B7131A]">Quiz</span></label>
+                                    <div class="relative">
+                                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <svg class="w-4 h-4 text-[#1E1E1E]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                                        </div>
+                                        <input type="url" placeholder="Masukkan Link Quiz" class="w-full bg-white border border-[#B8B8B8] rounded-[8px] h-[38px] md:h-[42px] pl-10 pr-4 text-[13px] md:text-[14px] focus:outline-none focus:border-[#B7131A] shadow-[0px_2px_4px_#E2E2E2] placeholder-[#A5A5A5]">
+                                    </div>
+                                </div>
+                                <button type="submit" class="bg-[#B7131A] text-white border border-[#A5A5A5] rounded-[8px] w-full h-[40px] md:h-[46px] text-[15px] md:text-[16px] font-normal tracking-wide hover:bg-[#91000A] transition-colors shadow-[0px_2px_4px_#E2E2E2]">SIMPAN</button>
+                            </div>
 
-                        <!-- Actions -->
-                        <div class="flex flex-col md:flex-row items-center gap-4 justify-between mt-4">
-                            <button type="submit" class="bg-[#B7131A] text-white border border-[#A5A5A5] rounded-[8px] w-full md:w-[200px] h-[40px] md:h-[46px] text-[15px] md:text-[16px] font-normal tracking-wide hover:bg-[#91000A] transition-colors shadow-[0px_2px_4px_#E2E2E2]">SIMPAN</button>
-                            <button type="button" @click="isModalOpen = false" class="bg-white text-[#4E342E] border border-[#A5A5A5] rounded-[8px] w-full md:w-[200px] h-[40px] md:h-[46px] text-[15px] md:text-[16px] font-normal tracking-wide hover:bg-gray-50 transition-colors shadow-[0px_2px_4px_#E2E2E2]">BATAL</button>
+                            <div class="flex flex-col gap-4">
+                                <div>
+                                    <label class="block text-[13px] md:text-[14px] text-[#4E342E] mb-1 font-normal">QR <span class="text-[#B7131A]">Quiz</span></label>
+                                    <button type="button" class="bg-white border border-[#B8B8B8] rounded-[8px] h-[38px] md:h-[42px] px-4 flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors shadow-[0px_2px_4px_#E2E2E2] w-full">
+                                        <svg class="w-4 h-4 text-[#1E1E1E]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                        <span class="text-[13px] md:text-[14px] text-[#4E342E]">Unggah File Baru</span>
+                                    </button>
+                                </div>
+                                <button type="button" @click="isModalOpen = false" class="bg-white text-[#4E342E] border border-[#A5A5A5] rounded-[8px] w-full h-[40px] md:h-[46px] text-[15px] md:text-[16px] font-normal tracking-wide hover:bg-gray-50 transition-colors shadow-[0px_2px_4px_#E2E2E2]">BATAL</button>
+                            </div>
                         </div>
                     </form>
                 </div>
