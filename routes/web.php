@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\QuizController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LessonController as UserLessonController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,13 +16,14 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::get('/lesson', function () {
-    return view('lesson');
-})->middleware(['auth', 'verified'])->name('lesson');
-
-Route::get('/lesson1-detail', function () {
-    return view('lesson1-detail');
-})->middleware(['auth', 'verified'])->name('lesson1-detail');
+Route::middleware(['auth', 'verified'])->group(function () {
+    // Tahap 12: Katalog Materi
+    Route::get('/lesson', [UserLessonController::class, 'index'])->name('lesson');
+    
+    // Tahap 13: Detail Materi & Trigger Progress
+    Route::get('/lesson/{slug}', [UserLessonController::class, 'show'])->name('lesson.show');
+    Route::post('/lesson/{id}/complete', [UserLessonController::class, 'complete'])->name('lesson.complete');
+});
 
 Route::get('/about', function () {
     return view('about');
