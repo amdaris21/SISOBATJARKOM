@@ -75,6 +75,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/admin/kelolamateri', function () {
         return view('admin.kelolamateri');
     })->name('kelolamateri');
+
+    Route::get('/admin/kelolaquiz', function () {
+        return view('admin.kelolaquiz');
+    })->name('kelolaquiz');
 });
 
 require __DIR__.'/auth.php';
