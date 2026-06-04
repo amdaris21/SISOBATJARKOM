@@ -20,10 +20,6 @@ Route::get('/lesson1-detail', function () {
     return view('lesson1-detail');
 })->middleware(['auth', 'verified'])->name('lesson1-detail');
 
-Route::get('/lesson/detail', function () {
-    return view('lesson-detail');
-})->middleware(['auth', 'verified'])->name('lesson.detail');
-
 Route::get('/about', function () {
     return view('about');
 })->middleware(['auth', 'verified'])->name('about');

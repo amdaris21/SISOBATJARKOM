@@ -114,7 +114,7 @@
                         <div class="px-4 py-1.5 bg-[#CAFCDF] border border-[#30D46F] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#30D46F] tracking-wide">Easy</span>
                         </div>
-                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
+                        <a href="{{ route('lesson1-detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </a>
@@ -125,7 +125,6 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="w-full bg-white border border-[#B8B8B8] rounded-[10px] p-6 flex flex-col justify-between relative shadow-[4px_4px_10px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-transform group min-h-[220px]">
                     <div class="flex items-start gap-4 mb-4">
                         <div class="w-12 h-12 bg-[#CA58E7] border border-white rounded-[10px] flex items-center justify-center shrink-0 shadow-sm">
@@ -140,7 +139,6 @@
                         <div class="px-4 py-1.5 bg-[#FCE7CA] border border-[#D27634] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#D27634] tracking-wide">Medium</span>
                         </div>
-                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </a>
@@ -151,7 +149,6 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="w-full bg-white border border-[#B8B8B8] rounded-[10px] p-6 flex flex-col justify-between relative shadow-[4px_4px_10px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-transform group min-h-[220px]">
                     <div class="flex items-start gap-4 mb-4">
                         <div class="w-12 h-12 bg-[#D9C1BC] border border-white rounded-[10px] flex items-center justify-center shrink-0 shadow-sm">
@@ -166,7 +163,6 @@
                         <div class="px-4 py-1.5 bg-[#FCE7CA] border border-[#D27634] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#D27634] tracking-wide">Medium</span>
                         </div>
-                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </a>
@@ -177,7 +173,6 @@
                     </div>
                 </div>
 
-                <!-- Card 4 -->
                 <div class="w-full bg-white border border-[#B8B8B8] rounded-[10px] p-6 flex flex-col justify-between relative shadow-[4px_4px_10px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-transform group min-h-[220px]">
                     <div class="flex items-start gap-4 mb-4">
                         <div class="w-12 h-12 bg-[#DB6369] border border-white rounded-[10px] flex items-center justify-center shrink-0 shadow-sm">
@@ -192,7 +187,6 @@
                         <div class="px-4 py-1.5 bg-[#CAFCDF] border border-[#30D46F] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#30D46F] tracking-wide">Easy</span>
                         </div>
-                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </a>
@@ -203,7 +197,6 @@
                     </div>
                 </div>
 
-                <!-- Card 5 -->
                 <div class="w-full bg-white border border-[#B8B8B8] rounded-[10px] p-6 flex flex-col justify-between relative shadow-[4px_4px_10px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-transform group min-h-[220px]">
                     <div class="flex items-start gap-4 mb-4">
                         <div class="w-12 h-12 bg-[#6AB1F7] border border-white rounded-[10px] flex items-center justify-center shrink-0 shadow-sm">
@@ -218,7 +211,6 @@
                         <div class="px-4 py-1.5 bg-[#FCCACA] border border-[#D23434] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#D23434] tracking-wide">Hard</span>
                         </div>
-                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </a>
@@ -229,7 +221,6 @@
                     </div>
                 </div>
 
-                <!-- Card 6 -->
                 <div class="w-full bg-white border border-[#B8B8B8] rounded-[10px] p-6 flex flex-col justify-between relative shadow-[4px_4px_10px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-transform group min-h-[220px]">
                     <div class="flex items-start gap-4 mb-4">
                         <div class="w-12 h-12 bg-[#FFB300] border border-white rounded-[10px] flex items-center justify-center shrink-0 shadow-sm">
@@ -244,7 +235,6 @@
                         <div class="px-4 py-1.5 bg-[#FCCACA] border border-[#D23434] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#D23434] tracking-wide">Hard</span>
                         </div>
-                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </a>
@@ -255,7 +245,6 @@
                     </div>
                 </div>
 
-                <!-- Card 7 -->
                 <div class="w-full bg-white border border-[#B8B8B8] rounded-[10px] p-6 flex flex-col justify-between relative shadow-[4px_4px_10px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-transform group min-h-[220px]">
                     <div class="flex items-start gap-4 mb-4">
                         <div class="w-12 h-12 bg-[#E58735] border border-white rounded-[10px] flex items-center justify-center shrink-0 shadow-sm">
@@ -270,7 +259,6 @@
                         <div class="px-4 py-1.5 bg-[#FCCACA] border border-[#D23434] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#D23434] tracking-wide">Hard</span>
                         </div>
-                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </a>
@@ -281,7 +269,6 @@
                     </div>
                 </div>
 
-                <!-- Card 8 -->
                 <div class="w-full bg-white border border-[#B8B8B8] rounded-[10px] p-6 flex flex-col justify-between relative shadow-[4px_4px_10px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-transform group min-h-[220px]">
                     <div class="flex items-start gap-4 mb-4">
                         <div class="w-12 h-12 bg-[#72D3F6] border border-white rounded-[10px] flex items-center justify-center shrink-0 shadow-sm">
@@ -296,7 +283,6 @@
                         <div class="px-4 py-1.5 bg-[#CAFCDF] border border-[#30D46F] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#30D46F] tracking-wide">Easy</span>
                         </div>
-                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </a>
@@ -307,7 +293,6 @@
                     </div>
                 </div>
 
-                <!-- Card 9 -->
                 <div class="w-full bg-white border border-[#B8B8B8] rounded-[10px] p-6 flex flex-col justify-between relative shadow-[4px_4px_10px_rgba(0,0,0,0.05)] hover:-translate-y-1 transition-transform group min-h-[220px]">
                     <div class="flex items-start gap-4 mb-4">
                         <div class="w-12 h-12 bg-[#5461EB] border border-white rounded-[10px] flex items-center justify-center shrink-0 shadow-sm">
@@ -322,7 +307,6 @@
                         <div class="px-4 py-1.5 bg-[#FCE7CA] border border-[#D27634] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#D27634] tracking-wide">Medium</span>
                         </div>
-                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </a>
@@ -340,7 +324,7 @@
     <footer class="w-full bg-[rgba(92,64,0,0.09)] border-t border-[#B8B8B8] pt-16 pb-6 mt-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                <!-- Col 1 -->
+
                 <div>
                     <h1 class="text-[40px] md:text-[48px] font-medium tracking-tight text-[#4E342E] mb-2 leading-none">
                         SISOBAT<br/><span class="text-[#B7131A]">JARKOM</span>

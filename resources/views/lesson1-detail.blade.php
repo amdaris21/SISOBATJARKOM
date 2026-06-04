@@ -19,11 +19,17 @@
         .fallback-img {
             text-indent: -10000px;
         }
+
+        /* Tiga baris di bawah ini adalah TAMBAHAN untuk Efek Flip Card 3D */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1); }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+        .is-flipped { transform: rotateY(180deg); }
     </style>
 </head>
 <body class="antialiased text-[#4E342E] min-h-screen flex flex-col">
 
-    <!-- Header Navigation -->
     <header class="w-full bg-white border-b border-[#B8B8B8] sticky top-0 z-50 h-[88px] flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -70,18 +76,15 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="flex-grow w-full pb-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
 
-            <!-- Back Link -->
             <div class="mb-6">
                 <a href="/lesson" class="text-[14px] text-[#7B7675] hover:text-black font-medium flex items-center gap-1">
                     &lsaquo; Kembali ke Materi
                 </a>
             </div>
 
-            <!-- Top Banner (Module Header) -->
             <div class="bg-white border-2 border-[#B7131A] rounded-[20px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-8 md:p-12 mb-8">
                 <h2 class="text-3xl md:text-[40px] font-bold text-black leading-tight mb-6">
                     Materi Dasar <span class="text-[#B7131A]">Jaringan Komputer</span>
@@ -91,9 +94,7 @@
                 </p>
             </div>
 
-            <!-- Progress Card -->
             <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col md:flex-row items-center gap-6 mb-12">
-                <!-- Circular Progress SVG -->
                 <div class="relative w-16 h-16 flex items-center justify-center flex-shrink-0">
                     <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
                         <path class="text-gray-200" stroke="currentColor" stroke-width="3" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
@@ -120,7 +121,6 @@
                 </div>
             </div>
 
-            <!-- Komponen Utama Jaringan -->
             <div class="mb-16">
                 <div class="flex justify-between items-end mb-2">
                     <div>
@@ -128,58 +128,87 @@
                         <p class="text-sm text-[#7B7675] mt-1 font-medium">Pahami peran spesifik setiap perangkat di jaringan komputer</p>
                     </div>
                     <a href="#" class="text-[13px] text-[#7B7675] hover:text-black font-medium flex items-center gap-1.5 transition">
-                        <span>🖱️</span> Klik untuk melihat detail
+                        <span> </span> Klik untuk melihat detail
                     </a>
                 </div>
                 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-                    <!-- Card 1: Router -->
-                   <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col items-center justify-between text-center hover:-translate-y-1 transition-transform duration-200 min-h-[260px]">
-                        <div class="w-32 h-24 flex items-center justify-center mb-4">
-                            <img src="{{ asset('images/Router1.jpeg') }}" alt="Router" class="max-w-full max-h-full object-contain">
-                        </div>
-                        <div>
-                            <h4 class="text-[16px] font-semibold text-black mb-1">Router</h4>
-                            <a href="#" class="text-[#B7131A] text-[11px] font-semibold hover:underline">Lihat Detail &rsaquo;</a>
+                    
+                    <div class="relative w-full h-[260px] perspective-1000">
+                        <div class="w-full h-full relative transform-style-3d flip-card-inner cursor-pointer">
+                            <div class="absolute inset-0 backface-hidden bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col items-center justify-between text-center hover:-translate-y-1 transition-transform duration-200">
+                                <div class="w-32 h-24 flex items-center justify-center mb-4">
+                                    <img src="{{ asset('images/router.png') }}" alt="Router" class="max-w-full max-h-full object-contain">
+                                </div>
+                                <div>
+                                    <h4 class="text-[16px] font-semibold text-black mb-1">Router</h4>
+                                    <a href="#" onclick="event.preventDefault();" class="text-[#B7131A] text-[11px] font-semibold hover:underline">Lihat Detail &rsaquo;</a>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 backface-hidden rotate-y-180 bg-[#7B1817] text-white border border-[#B8B8B8] rounded-[15px] shadow-md p-5 flex flex-col items-center justify-center text-center">
+                                <h4 class="text-[16px] font-semibold mb-3">Router</h4>
+                                <p class="text-[13px] leading-relaxed">Berfungsi sebagai penghubung antar dua jaringan atau lebih yang berbeda, serta mengatur lalu lintas data (routing).</p>
+                            </div>
                         </div>
                     </div>
-                    <!-- Card 2: Switch -->
-                    <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col items-center justify-between text-center hover:-translate-y-1 transition-transform duration-200 min-h-[260px]">
-                    <div class="w-32 h-24 flex items-center justify-center mb-4">
-                        <img src="{{ asset('images/switch.jpeg') }}" alt="Switch" class="max-w-full max-h-full object-contain">
-                   </div>
-                        <div>
-                      <h4 class="text-[16px] font-semibold text-black mb-1">Switch</h4>
-                    <a href="#" class="text-[#B7131A] text-[11px] font-semibold hover:underline">Lihat Detail &rsaquo;</a>
-                    </div>
+                  
+                    <div class="relative w-full h-[260px] perspective-1000">
+                        <div class="w-full h-full relative transform-style-3d flip-card-inner cursor-pointer">
+                            <div class="absolute inset-0 backface-hidden bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col items-center justify-between text-center hover:-translate-y-1 transition-transform duration-200">
+                                <div class="w-32 h-24 flex items-center justify-center mb-4">
+                                    <img src="{{ asset('images/switch.png') }}" alt="Switch" class="max-w-full max-h-full object-contain">
+                                </div>
+                                <div>
+                                    <h4 class="text-[16px] font-semibold text-black mb-1">Switch</h4>
+                                    <a href="#" onclick="event.preventDefault();" class="text-[#B7131A] text-[11px] font-semibold hover:underline">Lihat Detail &rsaquo;</a>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 backface-hidden rotate-y-180 bg-[#7B1817] text-white border border-[#B8B8B8] rounded-[15px] shadow-md p-5 flex flex-col items-center justify-center text-center">
+                                <h4 class="text-[16px] font-semibold mb-3">Switch</h4>
+                                <p class="text-[13px] leading-relaxed">Berfungsi menghubungkan perangkat dalam satu jaringan lokal (LAN) dengan meneruskan data berdasarkan MAC Address.</p>
+                            </div>
+                        </div>
                     </div>
 
-
-                    <!-- Card 3: Server -->
-                    <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col items-center justify-between text-center hover:-translate-y-1 transition-transform duration-200 min-h-[260px]">
-                        <div class="w-32 h-24 flex items-center justify-center mb-4">
-                            <img src="{{ asset('images/server1.jpeg') }}" alt="Server" class="max-w-full max-h-full object-contain text-indent-[-9999px]">
+                    <div class="relative w-full h-[260px] perspective-1000">
+                        <div class="w-full h-full relative transform-style-3d flip-card-inner cursor-pointer">
+                            <div class="absolute inset-0 backface-hidden bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col items-center justify-between text-center hover:-translate-y-1 transition-transform duration-200">
+                                <div class="w-32 h-24 flex items-center justify-center mb-4">
+                                    <img src="{{ asset('images/server.png') }}" alt="Server" class="max-w-full max-h-full object-contain text-indent-[-9999px]">
+                                </div>
+                                <div>
+                                    <h4 class="text-[16px] font-semibold text-black mb-1">Server</h4>
+                                    <a href="#" onclick="event.preventDefault();" class="text-[#B7131A] text-[11px] font-semibold hover:underline">Lihat Detail &rsaquo;</a>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 backface-hidden rotate-y-180 bg-[#7B1817] text-white border border-[#B8B8B8] rounded-[15px] shadow-md p-5 flex flex-col items-center justify-center text-center">
+                                <h4 class="text-[16px] font-semibold mb-3">Server</h4>
+                                <p class="text-[13px] leading-relaxed">Berfungsi sebagai penyedia layanan, sumber daya, atau data yang dibutuhkan oleh perangkat klien dalam jaringan.</p>
+                            </div>
                         </div>
-                        <div>
-                            <h4 class="text-[16px] font-semibold text-black mb-1">Server</h4>
-                            <a href="#" class="text-[#B7131A] text-[11px] font-semibold hover:underline">Lihat Detail &rsaquo;</a>
+                    </div>
+
+                    <div class="relative w-full h-[260px] perspective-1000">
+                        <div class="w-full h-full relative transform-style-3d flip-card-inner cursor-pointer">
+                            <div class="absolute inset-0 backface-hidden bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col items-center justify-between text-center hover:-translate-y-1 transition-transform duration-200">
+                                <div class="w-32 h-24 flex items-center justify-center mb-4">
+                                    <img src="{{ asset('images/pc.png') }}" alt="PC" class="max-w-full max-h-full object-contain">
+                                </div>
+                                <div>
+                                    <h4 class="text-[16px] font-semibold text-black mb-1">PC</h4>
+                                    <a href="#" onclick="event.preventDefault();" class="text-[#B7131A] text-[11px] font-semibold hover:underline">Lihat Detail &rsaquo;</a>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 backface-hidden rotate-y-180 bg-[#7B1817] text-white border border-[#B8B8B8] rounded-[15px] shadow-md p-5 flex flex-col items-center justify-center text-center">
+                                <h4 class="text-[16px] font-semibold mb-3">PC</h4>
+                                <p class="text-[13px] leading-relaxed">Berfungsi sebagai titik akhir (end-device) bagi pengguna untuk mengakses data atau layanan yang disediakan server.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Card 4: PC -->
-                    <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col items-center justify-between text-center hover:-translate-y-1 transition-transform duration-200 min-h-[260px]">
-                        <div class="w-32 h-24 flex items-center justify-center mb-4">
-                            <img src="{{ asset('images/PC.jpeg') }}" alt="PC" class="max-w-full max-h-full object-contain">
-                        </div>
-                        <div>
-                            <h4 class="text-[16px] font-semibold text-black mb-1">PC</h4>
-                            <a href="#" class="text-[#B7131A] text-[11px] font-semibold hover:underline">Lihat Detail &rsaquo;</a>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <!-- Apa itu Jaringan Komputer? -->
             <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-8 md:p-10 mb-16">
                 <h3 class="text-[20px] font-bold text-black border-b-2 border-[#B7131A] pb-2 inline-block mb-6">Apa itu Jaringan Komputer?</h3>
                 <div class="flex flex-col lg:flex-row items-center gap-10">
@@ -187,18 +216,18 @@
                         Jaringan komputer adalah sekumpulan perangkat yang saling terhubung untuk berbagi informasi dan sumber daya secara efisien. Infrastruktur ini dibangun menggunakan perangkat keras seperti kabel dan router serta protokol komunikasi yang memungkinkan perangkat untuk saling berkomunikasi, mulai dari skala kecil di rumah hingga skala besar seperti internet.
                     </div>
                     <div class="w-full lg:w-2/5 bg-gray-50 border border-[#B8B8B8] rounded-lg flex items-center justify-center overflow-hidden shadow-inner p-4">
-                        <img src="{{ asset('images/jaringan.jpeg') }}" alt="Jaringan Komputer" class="w-full h-auto max-h-[360px] object-contain rounded-md">
+                        <img src="{{ asset('images/jaringan.jpeg') }}" 
+                        alt="Jaringan Komputer" 
+                        class="w-full h-auto max-h-[360px] object-contain rounded-md">
                     </div>
                 </div>
             </div>
 
-            <!-- Fungsi Utama -->
             <div class="mb-16 text-center">
                 <h3 class="text-[22px] font-bold text-black mb-1">Fungsi Utama</h3>
                 <p class="text-sm text-[#7B7675] font-medium mb-8">Pilar yang penting dalam Jaringan Komputer</p>
 
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-4 lg:px-4">
-                    <!-- Konektivitas -->
                     <div class="bg-white border border-[#B8B8B8] rounded-[10px] p-4 flex flex-col items-center text-center shadow-sm">
                         <div class="w-10 h-10 rounded-full flex items-center justify-center bg-red-50 text-[#B7131A] mb-3">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
@@ -206,7 +235,6 @@
                         <span class="text-[12px] font-semibold text-black leading-tight">Konektivitas</span>
                     </div>
 
-                    <!-- Pengiriman Data -->
                     <div class="bg-white border border-[#B8B8B8] rounded-[10px] p-4 flex flex-col items-center text-center shadow-sm">
                         <div class="w-10 h-10 rounded-full flex items-center justify-center bg-red-50 text-[#B7131A] mb-3">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
@@ -214,7 +242,6 @@
                         <span class="text-[12px] font-semibold text-black leading-tight">Pengiriman Data</span>
                     </div>
 
-                    <!-- Lalu Lintas Jaringan -->
                     <div class="bg-white border border-[#B8B8B8] rounded-[10px] p-4 flex flex-col items-center text-center shadow-sm">
                         <div class="w-10 h-10 rounded-full flex items-center justify-center bg-red-50 text-[#B7131A] mb-3">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
@@ -222,7 +249,6 @@
                         <span class="text-[12px] font-semibold text-black leading-tight">Lalu Lintas Jaringan</span>
                     </div>
 
-                    <!-- Keamanan Data -->
                     <div class="bg-white border border-[#B8B8B8] rounded-[10px] p-4 flex flex-col items-center text-center shadow-sm">
                         <div class="w-10 h-10 rounded-full flex items-center justify-center bg-red-50 text-[#B7131A] mb-3">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
@@ -230,7 +256,6 @@
                         <span class="text-[12px] font-semibold text-black leading-tight">Keamanan Data</span>
                     </div>
 
-                    <!-- Skalabilitas -->
                     <div class="bg-white border border-[#B8B8B8] rounded-[10px] p-4 flex flex-col items-center text-center shadow-sm">
                         <div class="w-10 h-10 rounded-full flex items-center justify-center bg-red-50 text-[#B7131A] mb-3">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
@@ -240,12 +265,10 @@
                 </div>
             </div>
 
-            <!-- Klasifikasi Jaringan Komputer -->
             <div class="mb-16">
                 <h3 class="text-[22px] font-bold text-black text-center mb-8">Klasifikasi Jaringan Komputer</h3>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <!-- LAN -->
                     <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 min-h-[180px]">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-8 h-8 rounded-full bg-[#B7131A] text-white flex items-center justify-center text-xs font-bold">
@@ -259,7 +282,6 @@
                         </ul>
                     </div>
 
-                    <!-- MAN -->
                     <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 min-h-[180px]">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-8 h-8 rounded-full bg-[#B7131A] text-white flex items-center justify-center text-xs font-bold">
@@ -273,7 +295,6 @@
                         </ul>
                     </div>
 
-                    <!-- WAN -->
                     <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 min-h-[180px]">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-8 h-8 rounded-full bg-[#B7131A] text-white flex items-center justify-center text-xs font-bold">
@@ -296,7 +317,6 @@
                 </div>
             </div>
 
-            <!-- Pagination Footer inside Main -->
             <div class="border-t border-[#B8B8B8] pt-8 mt-16 flex flex-col sm:flex-row justify-between items-center gap-4">
                 <span class="text-[14px] text-gray-400 cursor-not-allowed font-medium">&larr; Materi Sebelumnya</span>
                 <div class="text-center">
@@ -311,7 +331,6 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="w-full bg-[rgba(92,64,0,0.09)] border-t border-[#B8B8B8] pt-16 pb-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -368,5 +387,16 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cards = document.querySelectorAll('.flip-card-inner');
+            cards.forEach(function(card) {
+                card.addEventListener('click', function() {
+                    this.classList.toggle('is-flipped');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
