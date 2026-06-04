@@ -67,6 +67,14 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     // CRUD Quiz — Tahap 10
     Route::resource('quizzes', QuizController::class);
+
+    Route::get('/admin/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+    Route::get('/admin/kelolamateri', function () {
+        return view('admin.kelolamateri');
+    })->name('kelolamateri');
 });
 
 require __DIR__.'/auth.php';
