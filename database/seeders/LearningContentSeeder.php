@@ -17,9 +17,11 @@ use Illuminate\Support\Str;
  *
  * Struktur data:
  *   - 3 Modul utama (Dasar Jaringan, Pengkabelan, IP Address)
- *   - Masing-masing modul berisi 2–3 Lesson
- *   - Masing-masing lesson berisi 3–5 LessonBlock (text, video, image, mini_quiz)
+ *   - Masing-masing modul berisi 2 Lesson
+ *   - Masing-masing lesson berisi 3–5 LessonBlock (text, video, step, code, mini_quiz)
  *   - Masing-masing modul berisi 1 Quiz (link ke ZEP)
+ *
+ * Total: 3 Modul, 6 Lesson, 18+ LessonBlock, 3 Quiz
  */
 class LearningContentSeeder extends Seeder
 {
@@ -417,6 +419,80 @@ class LearningContentSeeder extends Seeder
                 'order_number' => 4,
                 'created_at'   => now(),
                 'updated_at'   => now(),
+            ],
+        ]);
+
+        // Lesson 3.2 — LESSON YANG SEBELUMNYA HILANG
+        $lesson3_2 = Lesson::create([
+            'module_id'    => $modul3->id,
+            'title'        => 'Subnet Mask dan Subnetting Dasar',
+            'slug'         => 'subnet-mask-dan-subnetting-dasar',
+            'description'  => 'Memahami fungsi subnet mask dan cara menghitung subnet sederhana untuk jaringan kelas C.',
+            'order_number' => 2,
+            'status'       => 'published',
+        ]);
+
+        LessonBlock::insert([
+            [
+                'lesson_id'      => $lesson3_2->id,
+                'type'           => 'text',
+                'title'          => 'Apa itu Subnet Mask?',
+                'content'        => "**Subnet Mask** adalah angka 32-bit yang digunakan bersama IP Address untuk menentukan bagian mana dari IP Address yang merupakan **Network** (jaringan) dan bagian mana yang merupakan **Host** (perangkat).\n\n**Contoh umum Subnet Mask:**\n- **255.0.0.0** = /8 → Digunakan di Kelas A\n- **255.255.0.0** = /16 → Digunakan di Kelas B\n- **255.255.255.0** = /24 → Digunakan di Kelas C (paling umum di lab sekolah)\n\nAngka `/24` disebut **CIDR Notation** (Classless Inter-Domain Routing).",
+                'media_url'      => null,
+                'embed_url'      => null,
+                'command'        => null,
+                'options'        => null,
+                'correct_answer' => null,
+                'order_number'   => 1,
+                'created_at'     => now(),
+                'updated_at'     => now(),
+            ],
+            [
+                'lesson_id'      => $lesson3_2->id,
+                'type'           => 'text',
+                'title'          => 'IP Private vs IP Public',
+                'content'        => "Dalam jaringan komputer, ada dua jenis IP Address berdasarkan aksesibilitasnya:\n\n**IP Private** — Digunakan di jaringan lokal (LAN), tidak bisa diakses langsung dari internet:\n| Kelas | Rentang IP Private |\n|-------|--------------------|\n| A | 10.0.0.0 – 10.255.255.255 |\n| B | 172.16.0.0 – 172.31.255.255 |\n| C | 192.168.0.0 – 192.168.255.255 |\n\n**IP Public** — Ditetapkan oleh ISP (penyedia internet), unik di seluruh dunia, digunakan untuk komunikasi antar jaringan via internet.\n\n**Contoh nyata:** WiFi rumahmu biasanya menggunakan IP Private `192.168.1.x`, sedangkan IP Public-mu terlihat saat mengakses situs seperti whatismyip.com.",
+                'media_url'      => null,
+                'embed_url'      => null,
+                'command'        => null,
+                'options'        => null,
+                'correct_answer' => null,
+                'order_number'   => 2,
+                'created_at'     => now(),
+                'updated_at'     => now(),
+            ],
+            [
+                'lesson_id'      => $lesson3_2->id,
+                'type'           => 'step',
+                'title'          => 'Cara Menghitung Jumlah Host dalam Satu Subnet',
+                'content'        => "Ikuti langkah berikut untuk menghitung jumlah host yang tersedia dalam satu subnet:\n\n**Langkah 1:** Tentukan prefix CIDR yang digunakan.\n→ Contoh: IP `192.168.1.0/24` berarti prefix = 24\n\n**Langkah 2:** Hitung jumlah bit untuk host.\n→ Rumus: **32 - prefix** = 32 - 24 = **8 bit host**\n\n**Langkah 3:** Hitung total alamat IP dalam subnet.\n→ Rumus: **2^(bit host)** = 2^8 = **256 alamat**\n\n**Langkah 4:** Kurangi 2 untuk Network Address dan Broadcast Address.\n→ **256 - 2 = 254 host yang dapat digunakan**\n\n**Kesimpulan:** Jaringan 192.168.1.0/24 bisa menampung **254 perangkat** (host usable).",
+                'media_url'      => null,
+                'embed_url'      => null,
+                'command'        => null,
+                'options'        => null,
+                'correct_answer' => null,
+                'order_number'   => 3,
+                'created_at'     => now(),
+                'updated_at'     => now(),
+            ],
+            [
+                'lesson_id'      => $lesson3_2->id,
+                'type'           => 'mini_quiz',
+                'title'          => 'Cek Pemahaman: Subnet Mask',
+                'content'        => 'Berapa jumlah host yang dapat digunakan pada jaringan dengan subnet mask 255.255.255.0 (/24)?',
+                'media_url'      => null,
+                'embed_url'      => null,
+                'command'        => null,
+                'options'        => json_encode([
+                    'a' => '256 host',
+                    'b' => '255 host',
+                    'c' => '254 host',
+                    'd' => '252 host',
+                ]),
+                'correct_answer' => 'c',
+                'order_number'   => 4,
+                'created_at'     => now(),
+                'updated_at'     => now(),
             ],
         ]);
 

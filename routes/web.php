@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ModuleController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,10 +26,13 @@ Route::middleware('auth')->group(function () {
 | Hanya user dengan role 'admin' yang bisa mengakses.
 */
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
-    // Halaman dashboard admin sementara (akan diganti controller di tahap selanjutnya)
+    // Dashboard Admin
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
+
+    // CRUD Modul — Tahap 7
+    Route::resource('modules', ModuleController::class);
 });
 
 require __DIR__.'/auth.php';
