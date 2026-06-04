@@ -69,14 +69,12 @@
     <main class="flex-grow w-full pb-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
             
-            <!-- STATISTIK -->
             <div class="flex items-center gap-4 mt-12 mb-8">
                 <h2 class="text-xl md:text-[22px] font-semibold tracking-wide text-black uppercase">STATISTIK</h2>
                 <div class="flex-grow h-px bg-[#B8B8B8]"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <!-- Total Pengguna -->
                 <div class="bg-white border border-[#E0D7D5] rounded-[15px] p-5 shadow-[0_6px_0_0_#D69600] hover:-translate-y-1 hover:shadow-[0_10px_0_0_#D69600] transition-all duration-300 group cursor-pointer">
                     <div class="flex items-center gap-3 mb-5">
                         <div class="w-[42px] h-[42px] bg-[#FFE099] rounded-[10px] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
@@ -92,7 +90,6 @@
                     </div>
                 </div>
 
-                <!-- Total Materi -->
                 <div class="bg-white border border-[#E0D7D5] rounded-[15px] p-5 shadow-[0_6px_0_0_#A10C13] hover:-translate-y-1 hover:shadow-[0_10px_0_0_#A10C13] transition-all duration-300 group cursor-pointer">
                     <div class="flex items-center gap-3 mb-5">
                         <div class="w-[42px] h-[42px] bg-[#FFCCCF] rounded-[10px] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
@@ -108,7 +105,6 @@
                     </div>
                 </div>
 
-                <!-- Total Quiz -->
                 <div class="bg-white border border-[#E0D7D5] rounded-[15px] p-5 shadow-[0_6px_0_0_#4E342E] hover:-translate-y-1 hover:shadow-[0_10px_0_0_#4E342E] transition-all duration-300 group cursor-pointer">
                     <div class="flex items-center gap-3 mb-5">
                         <div class="w-[42px] h-[42px] bg-[#D9C1BC] rounded-[10px] flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
@@ -126,7 +122,6 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-20">
-                <!-- Chart 1 -->
                 <div class="bg-white border border-[#E0D7D5] rounded-[15px] p-6 shadow-[4px_4px_10px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:shadow-[4px_4px_15px_rgba(0,0,0,0.1)] transition-all duration-300">
                     <div class="flex justify-between items-start mb-10">
                         <div>
@@ -138,9 +133,7 @@
                             <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                         </div>
                     </div>
-                    <!-- Chart Placeholder -->
                     <div class="h-[250px] w-full flex items-end justify-between px-2 pt-6">
-                        <!-- Bars -->
                         <div class="w-[10%] h-[40%] bg-[rgba(255,218,214,0.3)] border border-[#B7131A] rounded-t-[8px] hover:bg-[#B7131A] transition-colors duration-300 cursor-pointer"></div>
                         <div class="w-[10%] h-[55%] bg-[rgba(255,218,214,0.3)] border border-[#B7131A] rounded-t-[8px] hover:bg-[#B7131A] transition-colors duration-300 cursor-pointer"></div>
                         <div class="w-[10%] h-[45%] bg-[rgba(255,218,214,0.3)] border border-[#B7131A] rounded-t-[8px] hover:bg-[#B7131A] transition-colors duration-300 cursor-pointer"></div>
@@ -163,7 +156,6 @@
                     </div>
                 </div>
 
-                <!-- Chart 2 -->
                 <div class="bg-white border border-[#E0D7D5] rounded-[15px] p-6 shadow-[4px_4px_10px_rgba(0,0,0,0.05)] hover:-translate-y-1 hover:shadow-[4px_4px_15px_rgba(0,0,0,0.1)] transition-all duration-300 flex flex-col justify-between">
                     <div class="mb-8">
                         <h3 class="font-public text-[20px] font-bold text-[#361F1A]">Popularitas Materi</h3>
@@ -171,7 +163,6 @@
                     </div>
                     
                     <div class="flex flex-col gap-6">
-                        <!-- Item 1 -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
                                 <span class="text-[14px] font-semibold text-[#361F1A]">TCP/IP & Alamat IP</span>
@@ -182,7 +173,6 @@
                             </div>
                         </div>
                         
-                        <!-- Item 2 -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
                                 <span class="text-[14px] font-semibold text-[#361F1A]">7 OSI Layer</span>
@@ -193,7 +183,6 @@
                             </div>
                         </div>
 
-                        <!-- Item 3 -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
                                 <span class="text-[14px] font-semibold text-[#361F1A]">Keamanan Jaringan Dasar</span>
@@ -204,7 +193,6 @@
                             </div>
                         </div>
 
-                        <!-- Item 4 -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
                                 <span class="text-[14px] font-semibold text-[#361F1A]">Topologi Jaringan</span>
@@ -218,14 +206,12 @@
                 </div>
             </div>
 
-            <!-- Kelola Materi & Quiz -->
             <div class="flex items-center gap-4 mt-12 mb-8">
                 <h2 class="text-xl md:text-[22px] font-semibold tracking-wide text-black uppercase">Kelola Materi & Quiz</h2>
                 <div class="flex-grow h-px bg-[#B8B8B8]"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
-                <!-- Kelola Materi -->
                 <a href="#" class="bg-white border border-[#E0D7D5] rounded-[15px] p-5 shadow-[4px_4px_10px_rgba(0,0,0,0.05)] flex items-center justify-between group hover:-translate-y-1 hover:shadow-[4px_4px_15px_rgba(0,0,0,0.1)] transition-all duration-300">
                     <div class="flex items-center gap-5">
                         <div class="w-[60px] h-[60px] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -238,7 +224,6 @@
                     </div>
                 </a>
 
-                <!-- Kelola Quiz -->
                 <a href="#" class="bg-white border border-[#E0D7D5] rounded-[15px] p-5 shadow-[4px_4px_10px_rgba(0,0,0,0.05)] flex items-center justify-between group hover:-translate-y-1 hover:shadow-[4px_4px_15px_rgba(0,0,0,0.1)] transition-all duration-300">
                     <div class="flex items-center gap-5">
                         <div class="w-[60px] h-[60px] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -258,7 +243,6 @@
     <footer class="w-full bg-[rgba(92,64,0,0.09)] border-t border-[#B8B8B8] pt-16 pb-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                <!-- Col 1 -->
                 <div>
                     <h1 class="text-[40px] md:text-[48px] font-medium tracking-tight text-[#4E342E] mb-2 leading-none">
                         SISOBAT<br/><span class="text-[#B7131A]">JARKOM</span>
