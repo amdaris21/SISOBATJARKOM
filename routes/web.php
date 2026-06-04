@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ModuleController;
+use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +50,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     // CRUD Modul — Tahap 7
     Route::resource('modules', ModuleController::class);
+
+    // CRUD Materi — Tahap 9
+    Route::resource('lessons', LessonController::class);
 });
 
 require __DIR__.'/auth.php';
