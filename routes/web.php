@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ModuleController;
 use App\Http\Controllers\Admin\LessonController;
+use App\Http\Controllers\Admin\QuizController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,6 +54,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     // CRUD Materi — Tahap 9
     Route::resource('lessons', LessonController::class);
+
+    // CRUD Quiz — Tahap 10
+    Route::resource('quizzes', QuizController::class);
 });
 
 require __DIR__.'/auth.php';
