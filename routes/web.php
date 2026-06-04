@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ModuleController;
 use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\QuizController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LessonController as UserLessonController;
@@ -30,11 +31,16 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/quiz/{id}', [UserQuizController::class, 'show'])->name('quiz.show');
     Route::post('/quiz/{id}/start', [UserQuizController::class, 'start'])->name('quiz.start');
     Route::post('/quiz/{id}/complete', [UserQuizController::class, 'complete'])->name('quiz.complete');
-});
 
-Route::get('/about', function () {
-    return view('about');
-})->middleware(['auth', 'verified'])->name('about');
+    // Tahap 16: Halaman Statis (Tentang Kami & Bantuan)
+    Route::get('/about', function () {
+        return view('about');
+    })->name('about');
+
+    Route::get('/bantuan', function () {
+        return view('bantuan');
+    })->name('bantuan');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -51,9 +57,7 @@ Route::middleware('auth')->group(function () {
 */
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     // Dashboard Admin
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 
     // CRUD Modul — Tahap 7
     Route::resource('modules', ModuleController::class);
