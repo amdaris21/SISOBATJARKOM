@@ -36,9 +36,9 @@
             </div>
             
             <nav class="hidden md:flex items-center gap-8">
-                <a href="#" class="text-[15px] font-medium text-black border-b-2 border-[#B7131A] pb-1">Dashboard</a>
-                <a href="#" class="text-[15px] font-medium text-gray-700 hover:text-black transition">Kelola Materi</a>
-                <a href="#" class="text-[15px] font-medium text-gray-700 hover:text-black transition">Kelola Kuis</a>
+                <a href="{{ route('admin.dashboard') }}" class="text-[15px] font-medium text-black border-b-2 border-[#B7131A] pb-1">Dashboard</a>
+                <a href="{{ route('admin.kelolamateri') }}" class="text-[15px] font-medium text-gray-700 hover:text-black transition">Kelola Materi</a>
+                <a href="{{ route('admin.kelolaquiz') }}" class="text-[15px] font-medium text-gray-700 hover:text-black transition">Kelola Kuis</a>
             </nav>
 
             <div class="flex items-center gap-4">
