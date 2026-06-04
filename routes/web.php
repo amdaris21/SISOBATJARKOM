@@ -15,6 +15,14 @@ Route::get('/lesson', function () {
     return view('lesson');
 })->middleware(['auth', 'verified'])->name('lesson');
 
+Route::get('/lesson1-detail', function () {
+    return view('lesson1-detail');
+})->middleware(['auth', 'verified'])->name('lesson1-detail');
+
+Route::get('/quiz', function () {
+    return view('quiz');
+})->middleware(['auth', 'verified'])->name('quiz');
+
 Route::get('/about', function () {
     return view('about');
 })->middleware(['auth', 'verified'])->name('about');
