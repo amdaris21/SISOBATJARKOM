@@ -221,7 +221,7 @@
                     <p class="text-[#7B7675] text-[14px] leading-[18px] mb-5">
                         Dibangun untuk mempermudah akses belajar jaringan yang sering kali dianggap rumit.
                     </p>
-                    <a href="#" class="text-[#B7131A] text-base hover:underline font-medium inline-flex items-center gap-1">
+                    <a href="{{ route('about') }}" class="text-[#B7131A] text-base hover:underline font-medium inline-flex items-center gap-1">
                         Selengkapnya <span class="text-xl leading-none">&rarr;</span>
                     </a>
                 </div>

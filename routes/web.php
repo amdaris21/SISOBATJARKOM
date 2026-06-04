@@ -15,6 +15,10 @@ Route::get('/lesson', function () {
     return view('lesson');
 })->middleware(['auth', 'verified'])->name('lesson');
 
+Route::get('/about', function () {
+    return view('about');
+})->middleware(['auth', 'verified'])->name('about');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -38,7 +38,7 @@
                 <a href="{{ route('dashboard') }}" class="text-[15px] font-medium text-black border-b-2 border-[#B7131A] pb-1">Dashboard</a>
                 <a href="/lesson" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Materi</a>
                 <a href="#" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Kuis</a>
-                <a href="#" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Tentang</a>
+                <a href="{{ route('about') }}" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Tentang</a>
                 <a href="#" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Bantuan</a>
             </nav>
 
@@ -264,7 +264,7 @@
                     <p class="text-[#7B7675] text-[14px] leading-[18px] mb-5 max-w-[200px]">
                         Dibangun untuk mempermudah akses belajar jaringan yang sering kali dianggap rumit.
                     </p>
-                    <a href="#" class="text-[#B7131A] text-[15px] hover:underline font-medium inline-flex items-center gap-1">
+                    <a href="{{ route('about') }}" class="text-[#B7131A] text-[15px] hover:underline font-medium inline-flex items-center gap-1">
                         Selengkapnya <span class="text-xl leading-none">&rarr;</span>
                     </a>
                 </div>
