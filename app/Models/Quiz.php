@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 #[Fillable([
-    'module_id', 'title', 'description', 'zep_link', 'instruction', 'status',
+    'module_id', 'title', 'description', 'zep_link', 'instruction', 'status', 'question_count', 'level',
 ])]
 class Quiz extends Model
 {
