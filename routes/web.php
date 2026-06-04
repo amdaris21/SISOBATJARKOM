@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\QuizController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LessonController as UserLessonController;
+use App\Http\Controllers\QuizController as UserQuizController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -23,15 +24,17 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Tahap 13: Detail Materi & Trigger Progress
     Route::get('/lesson/{slug}', [UserLessonController::class, 'show'])->name('lesson.show');
     Route::post('/lesson/{id}/complete', [UserLessonController::class, 'complete'])->name('lesson.complete');
+
+    // Tahap 14 & 15: User Quiz ZEP & Progress
+    Route::get('/quiz', [UserQuizController::class, 'index'])->name('quiz');
+    Route::get('/quiz/{id}', [UserQuizController::class, 'show'])->name('quiz.show');
+    Route::post('/quiz/{id}/start', [UserQuizController::class, 'start'])->name('quiz.start');
+    Route::post('/quiz/{id}/complete', [UserQuizController::class, 'complete'])->name('quiz.complete');
 });
 
 Route::get('/about', function () {
     return view('about');
 })->middleware(['auth', 'verified'])->name('about');
-
-Route::get('/quiz', function () {
-    return view('quiz');
-})->middleware(['auth', 'verified'])->name('quiz');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
