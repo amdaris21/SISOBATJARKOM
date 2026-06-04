@@ -68,7 +68,7 @@
         </div>
     </header>
 
-    <main class="flex-grow w-full pb-20 bg-white">
+    <main x-data="{ isModalOpen: false }" class="flex-grow w-full pb-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
             
             <div class="w-full bg-white border border-[#B8B8B8] rounded-[15px] flex flex-col md:flex-row items-center justify-between shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow duration-300 min-h-[250px] md:min-h-[300px] p-6 md:p-10 mb-8">
@@ -92,7 +92,7 @@
             </div>
 
             <div class="mb-8">
-                <button class="bg-[#B7131A] hover:bg-[#91000A] text-white rounded-[12px] px-6 py-2.5 flex items-center gap-3 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-1 group inline-flex">
+                <button @click="isModalOpen = true" class="bg-[#B7131A] hover:bg-[#91000A] text-white rounded-[12px] px-6 py-2.5 flex items-center gap-3 transition-all duration-300 shadow-sm hover:shadow-md transform hover:-translate-y-1 group inline-flex">
                     <div class="w-6 h-6 rounded-full border-[2px] border-white flex items-center justify-center group-hover:rotate-90 transition-transform duration-300">
                         <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>
                     </div>
@@ -290,6 +290,54 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Modal Tambah Materi Baru -->
+            <div x-show="isModalOpen" style="display: none;" class="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-40 px-4 py-4">
+                <div @click.outside="isModalOpen = false" class="bg-white rounded-[10px] w-full max-w-xl p-5 md:p-6 relative max-h-[90vh] overflow-y-auto" style="border: 1px solid #A5A5A5; box-shadow: 0px 4px 4px #B7131A;">
+                    
+                    <h2 class="text-[18px] md:text-[22px] text-[#4E342E] mb-4 font-normal tracking-tight">Tambah <span class="text-[#B7131A]">Materi Baru</span></h2>
+
+                    <form action="#" method="POST">
+                        <!-- Nama Materi Baru -->
+                        <div class="mb-3">
+                            <label class="block text-[13px] md:text-[14px] text-[#4E342E] mb-1 font-normal">Nama <span class="text-[#B7131A]">Materi Baru</span></label>
+                            <input type="text" class="w-full bg-white border border-[#B8B8B8] rounded-[8px] h-[38px] md:h-[42px] px-4 text-[13px] md:text-[14px] focus:outline-none focus:border-[#B7131A] shadow-[0px_2px_4px_#E2E2E2]">
+                        </div>
+
+                        <!-- Kategori dan Level -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                            <div>
+                                <label class="block text-[13px] md:text-[14px] text-[#4E342E] mb-1 font-normal">Kategori</label>
+                                <input type="text" class="w-full bg-white border border-[#A5A5A5] rounded-[8px] h-[38px] md:h-[42px] px-4 text-[13px] md:text-[14px] focus:outline-none focus:border-[#B7131A] shadow-[0px_2px_4px_#E2E2E2]">
+                            </div>
+                            <div>
+                                <label class="block text-[13px] md:text-[14px] text-[#4E342E] mb-1 font-normal">Level</label>
+                                <input type="text" class="w-full bg-white border border-[#A5A5A5] rounded-[8px] h-[38px] md:h-[42px] px-4 text-[13px] md:text-[14px] focus:outline-none focus:border-[#B7131A] shadow-[0px_2px_4px_#E2E2E2]">
+                            </div>
+                        </div>
+
+                        <!-- Deskripsi Materi Baru -->
+                        <div class="mb-3">
+                            <label class="block text-[13px] md:text-[14px] text-[#4E342E] mb-1 font-normal">Deskripsi <span class="text-[#B7131A]">Materi Baru</span></label>
+                            <textarea class="w-full bg-white border border-[#A5A5A5] rounded-[8px] h-[80px] md:h-[100px] p-3 text-[13px] md:text-[14px] resize-none focus:outline-none focus:border-[#B7131A] shadow-[0px_2px_4px_#E2E2E2]"></textarea>
+                        </div>
+
+                        <!-- Unggah File Baru -->
+                        <div class="mb-6">
+                            <button type="button" class="bg-white border border-[#B8B8B8] rounded-[8px] h-[38px] md:h-[42px] px-4 flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors shadow-[0px_2px_4px_#E2E2E2] w-full md:w-[180px]">
+                                <svg class="w-4 h-4 text-[#1E1E1E]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                <span class="text-[13px] md:text-[14px] text-[#4E342E]">Unggah File Baru</span>
+                            </button>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="flex flex-col md:flex-row items-center gap-4 justify-between mt-4">
+                            <button type="submit" class="bg-[#B7131A] text-white border border-[#A5A5A5] rounded-[8px] w-full md:w-[200px] h-[40px] md:h-[46px] text-[15px] md:text-[16px] font-normal tracking-wide hover:bg-[#91000A] transition-colors shadow-[0px_2px_4px_#E2E2E2]">SIMPAN</button>
+                            <button type="button" @click="isModalOpen = false" class="bg-white text-[#4E342E] border border-[#A5A5A5] rounded-[8px] w-full md:w-[200px] h-[40px] md:h-[46px] text-[15px] md:text-[16px] font-normal tracking-wide hover:bg-gray-50 transition-colors shadow-[0px_2px_4px_#E2E2E2]">BATAL</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
