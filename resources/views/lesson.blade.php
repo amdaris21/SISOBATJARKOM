@@ -37,7 +37,7 @@
             <nav class="hidden md:flex items-center gap-8">
                 <a href="{{ route('dashboard') }}" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Dashboard</a>
                 <a href="#" class="text-[15px] font-medium text-black border-b-2 border-[#B7131A] pb-1">Materi</a>
-                <a href="#" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Kuis</a>
+                <a href="{{ route('quiz') }}" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Kuis</a>
                 <a href="{{ route('about') }}" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Tentang</a>
                 <a href="#" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Bantuan</a>
             </nav>
@@ -114,10 +114,10 @@
                         <div class="px-4 py-1.5 bg-[#CAFCDF] border border-[#30D46F] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#30D46F] tracking-wide">Easy</span>
                         </div>
-                        <button class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
+                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
+                        </a>
                     </div>
                     <div class="w-full relative h-[10px] mt-2">
                         <div class="w-full h-full bg-gray-100 border border-[#B8B8B8] rounded-full absolute inset-0"></div>
@@ -140,10 +140,10 @@
                         <div class="px-4 py-1.5 bg-[#FCE7CA] border border-[#D27634] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#D27634] tracking-wide">Medium</span>
                         </div>
-                        <button class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
+                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
+                        </a>
                     </div>
                     <div class="w-full relative h-[10px] mt-2">
                         <div class="w-full h-full bg-gray-100 border border-[#B8B8B8] rounded-full absolute inset-0"></div>
@@ -166,10 +166,10 @@
                         <div class="px-4 py-1.5 bg-[#FCE7CA] border border-[#D27634] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#D27634] tracking-wide">Medium</span>
                         </div>
-                        <button class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
+                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
+                        </a>
                     </div>
                     <div class="w-full relative h-[10px] mt-2">
                         <div class="w-full h-full bg-gray-100 border border-[#B8B8B8] rounded-full absolute inset-0"></div>
@@ -192,10 +192,10 @@
                         <div class="px-4 py-1.5 bg-[#CAFCDF] border border-[#30D46F] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#30D46F] tracking-wide">Easy</span>
                         </div>
-                        <button class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
+                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
+                        </a>
                     </div>
                     <div class="w-full relative h-[10px] mt-2">
                         <div class="w-full h-full bg-gray-100 border border-[#B8B8B8] rounded-full absolute inset-0"></div>
@@ -218,10 +218,10 @@
                         <div class="px-4 py-1.5 bg-[#FCCACA] border border-[#D23434] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#D23434] tracking-wide">Hard</span>
                         </div>
-                        <button class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
+                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
+                        </a>
                     </div>
                     <div class="w-full relative h-[10px] mt-2">
                         <div class="w-full h-full bg-gray-100 border border-[#B8B8B8] rounded-full absolute inset-0"></div>
@@ -244,10 +244,10 @@
                         <div class="px-4 py-1.5 bg-[#FCCACA] border border-[#D23434] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#D23434] tracking-wide">Hard</span>
                         </div>
-                        <button class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
+                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
+                        </a>
                     </div>
                     <div class="w-full relative h-[10px] mt-2">
                         <div class="w-full h-full bg-gray-100 border border-[#B8B8B8] rounded-full absolute inset-0"></div>
@@ -270,10 +270,10 @@
                         <div class="px-4 py-1.5 bg-[#FCCACA] border border-[#D23434] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#D23434] tracking-wide">Hard</span>
                         </div>
-                        <button class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
+                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
+                        </a>
                     </div>
                     <div class="w-full relative h-[10px] mt-2">
                         <div class="w-full h-full bg-gray-100 border border-[#B8B8B8] rounded-full absolute inset-0"></div>
@@ -296,10 +296,10 @@
                         <div class="px-4 py-1.5 bg-[#CAFCDF] border border-[#30D46F] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#30D46F] tracking-wide">Easy</span>
                         </div>
-                        <button class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
+                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
+                        </a>
                     </div>
                     <div class="w-full relative h-[10px] mt-2">
                         <div class="w-full h-full bg-gray-100 border border-[#B8B8B8] rounded-full absolute inset-0"></div>
@@ -322,10 +322,10 @@
                         <div class="px-4 py-1.5 bg-[#FCE7CA] border border-[#D27634] border-opacity-30 rounded-full flex items-center justify-center shadow-sm">
                             <span class="font-semibold text-[12px] text-[#D27634] tracking-wide">Medium</span>
                         </div>
-                        <button class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
+                        <a href="{{ route('lesson.detail') }}" class="px-4 py-1.5 bg-white border border-[#B8B8B8] rounded-full flex items-center justify-center gap-2 hover:bg-gray-50 transition shadow-sm">
                             <span class="text-[13px] font-medium text-black">Pelajari</span>
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
+                        </a>
                     </div>
                     <div class="w-full relative h-[10px] mt-2">
                         <div class="w-full h-full bg-gray-100 border border-[#B8B8B8] rounded-full absolute inset-0"></div>

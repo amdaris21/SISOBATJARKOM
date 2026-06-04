@@ -15,9 +15,17 @@ Route::get('/lesson', function () {
     return view('lesson');
 })->middleware(['auth', 'verified'])->name('lesson');
 
+Route::get('/lesson/detail', function () {
+    return view('lesson-detail');
+})->middleware(['auth', 'verified'])->name('lesson.detail');
+
 Route::get('/about', function () {
     return view('about');
 })->middleware(['auth', 'verified'])->name('about');
+
+Route::get('/quiz', function () {
+    return view('quiz');
+})->middleware(['auth', 'verified'])->name('quiz');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

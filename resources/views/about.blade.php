@@ -38,7 +38,7 @@
             <nav class="hidden md:flex items-center gap-8">
                 <a href="{{ route('dashboard') }}" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Dashboard</a>
                 <a href="/lesson" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Materi</a>
-                <a href="#" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Kuis</a>
+                <a href="{{ route('quiz') }}" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Kuis</a>
                 <a href="{{ route('about') }}" class="text-[15px] font-medium text-black border-b-2 border-[#B7131A] pb-1">Tentang</a>
                 <a href="#" class="text-[15px] font-medium text-[#7B7675] hover:text-black transition">Bantuan</a>
             </nav>
