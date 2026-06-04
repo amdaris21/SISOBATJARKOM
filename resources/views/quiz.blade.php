@@ -71,7 +71,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow w-full pb-20">
+    <main class="flex-grow w-full pb-20 relative" x-data="{ showModal: false, quizTitle: 'Dasar Jaringan Komputer', quizLevel: 'Medium' }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
 
             <!-- Banner Section -->
@@ -132,7 +132,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <!-- Card 1: Quiz Dasar jaringan -->
-                <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col justify-between min-h-[220px]">
+                <div @click="quizTitle = 'Dasar Jaringan Komputer'; quizLevel = 'Easy'; showModal = true" class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col justify-between min-h-[220px] cursor-pointer hover:-translate-y-1 transition-transform">
                     <div>
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-12 h-12 rounded-[12px] bg-[#B7131A] flex items-center justify-center text-white flex-shrink-0">
@@ -152,14 +152,14 @@
                         <div class="w-full bg-[#FFA3A6] text-[#7F1010] text-[13px] font-semibold py-2 px-4 rounded-full text-center shadow-sm">
                             ✓ Selesai - Skor 70
                         </div>
-                        <a href="#" class="text-[#B7131A] text-[12px] font-semibold hover:underline flex items-center justify-center gap-1">
+                        <button class="text-[#B7131A] text-[12px] font-semibold hover:underline flex items-center justify-center gap-1">
                             Ulangi Quiz <span class="text-sm font-bold">&rsaquo;</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 2: Quiz Osi Layer -->
-                <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col justify-between min-h-[220px]">
+                <div @click="quizTitle = 'Osi Layer'; quizLevel = 'Medium'; showModal = true" class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col justify-between min-h-[220px] cursor-pointer hover:-translate-y-1 transition-transform">
                     <div>
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-12 h-12 rounded-[12px] bg-[#B7131A] flex items-center justify-center text-white flex-shrink-0">
@@ -179,14 +179,14 @@
                         <div class="w-full bg-[#FFA3A6] text-[#7F1010] text-[13px] font-semibold py-2 px-4 rounded-full text-center shadow-sm">
                             ✓ Selesai - Skor 90
                         </div>
-                        <a href="#" class="text-[#B7131A] text-[12px] font-semibold hover:underline flex items-center justify-center gap-1">
+                        <button class="text-[#B7131A] text-[12px] font-semibold hover:underline flex items-center justify-center gap-1">
                             Ulangi Quiz <span class="text-sm font-bold">&rsaquo;</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 3: Quiz HTTP, HTTPS & DNS -->
-                <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col justify-between min-h-[220px]">
+                <div @click="quizTitle = 'HTTP, HTTPS & DNS'; quizLevel = 'Medium'; showModal = true" class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col justify-between min-h-[220px] cursor-pointer hover:-translate-y-1 transition-transform">
                     <div>
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-12 h-12 rounded-[12px] bg-[#B7131A] flex items-center justify-center text-white flex-shrink-0">
@@ -206,14 +206,14 @@
                         <div class="w-full bg-[#FFA3A6] text-[#7F1010] text-[13px] font-semibold py-2 px-4 rounded-full text-center shadow-sm">
                             ✓ Selesai - Skor 60
                         </div>
-                        <a href="#" class="text-[#B7131A] text-[12px] font-semibold hover:underline flex items-center justify-center gap-1">
+                        <button class="text-[#B7131A] text-[12px] font-semibold hover:underline flex items-center justify-center gap-1">
                             Ulangi Quiz <span class="text-sm font-bold">&rsaquo;</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 4: Quiz Tebak Topologi -->
-                <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col justify-between min-h-[220px]">
+                <div @click="quizTitle = 'Tebak Topologi'; quizLevel = 'Easy'; showModal = true" class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col justify-between min-h-[220px] cursor-pointer hover:-translate-y-1 transition-transform">
                     <div>
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-12 h-12 rounded-[12px] bg-[#B7131A] flex items-center justify-center text-white flex-shrink-0">
@@ -233,14 +233,14 @@
                         <div class="w-full bg-[#FFA3A6] text-[#7F1010] text-[13px] font-semibold py-2 px-4 rounded-full text-center shadow-sm">
                             ✓ Selesai - Skor 80
                         </div>
-                        <a href="#" class="text-[#B7131A] text-[12px] font-semibold hover:underline flex items-center justify-center gap-1">
+                        <button class="text-[#B7131A] text-[12px] font-semibold hover:underline flex items-center justify-center gap-1">
                             Ulangi Quiz <span class="text-sm font-bold">&rsaquo;</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 5: Quiz Arsitektur Komputer -->
-                <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col justify-between min-h-[220px]">
+                <div @click="quizTitle = 'Arsitektur Komputer'; quizLevel = 'Easy'; showModal = true" class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col justify-between min-h-[220px] cursor-pointer hover:-translate-y-1 transition-transform">
                     <div>
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-12 h-12 rounded-[12px] bg-[#B7131A] flex items-center justify-center text-white flex-shrink-0">
@@ -260,14 +260,14 @@
                         <div class="w-full bg-[#FFA3A6] text-[#7F1010] text-[13px] font-semibold py-2 px-4 rounded-full text-center shadow-sm">
                             ✓ Selesai - Skor 90
                         </div>
-                        <a href="#" class="text-[#B7131A] text-[12px] font-semibold hover:underline flex items-center justify-center gap-1">
+                        <button class="text-[#B7131A] text-[12px] font-semibold hover:underline flex items-center justify-center gap-1">
                             Ulangi Quiz <span class="text-sm font-bold">&rsaquo;</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
                 <!-- Card 6: Quiz TCP dan IP -->
-                <div class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col justify-between min-h-[220px]">
+                <div @click="quizTitle = 'TCP dan IP'; quizLevel = 'Medium'; showModal = true" class="bg-white border border-[#B8B8B8] rounded-[15px] shadow-[4px_4px_10px_rgba(0,0,0,0.05)] p-6 flex flex-col justify-between min-h-[220px] cursor-pointer hover:-translate-y-1 transition-transform">
                     <div>
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-12 h-12 rounded-[12px] bg-[#B7131A] flex items-center justify-center text-white flex-shrink-0">
@@ -287,9 +287,9 @@
                         <div class="w-full bg-[#FFA3A6] text-[#7F1010] text-[13px] font-semibold py-2 px-4 rounded-full text-center shadow-sm">
                             ✓ Selesai - Skor 90
                         </div>
-                        <a href="#" class="text-[#B7131A] text-[12px] font-semibold hover:underline flex items-center justify-center gap-1">
+                        <button class="text-[#B7131A] text-[12px] font-semibold hover:underline flex items-center justify-center gap-1">
                             Ulangi Quiz <span class="text-sm font-bold">&rsaquo;</span>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -368,6 +368,113 @@
                     </div>
                 </div>
 
+            </div>
+
+            <!-- Quiz Detail Modal -->
+            <div x-show="showModal" style="display: none;" class="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm px-4">
+                <!-- Modal Content -->
+                <div @click.outside="showModal = false" class="bg-white rounded-[15px] shadow-2xl w-full max-w-[850px] flex flex-col overflow-hidden relative" x-transition.opacity>
+                    <!-- Close button -->
+                    <button @click="showModal = false" class="absolute top-4 right-4 text-[#B8B8B8] hover:text-black transition focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+
+                    <!-- Modal Body -->
+                    <div class="p-8">
+                        <div class="mb-6">
+                            <h2 class="text-[18px] font-medium text-black">Quiz: <span class="text-[#B7131A] font-semibold" x-text="quizTitle">Dasar Jaringan Komputer</span></h2>
+                            <div class="w-full h-px bg-[#B8B8B8] mt-4"></div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <!-- Left Side -->
+                            <div class="w-full md:w-[55%] flex flex-col gap-6">
+                                <!-- Info & Tips Grid -->
+                                <div class="grid grid-cols-2 gap-4 h-full">
+                                    <!-- Informasi Quiz -->
+                                    <div class="border border-[#B7131A] rounded-[8px] p-4 bg-white shadow-sm flex flex-col">
+                                        <h4 class="text-[13px] font-bold text-[#B7131A] mb-3">Informasi Quiz</h4>
+                                        <div class="space-y-3 text-[12px]">
+                                            <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                                                <span class="text-black font-medium">Tingkat</span>
+                                                <span class="font-bold text-[#B7131A]" x-text="quizLevel">Medium</span>
+                                            </div>
+                                            <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                                                <span class="text-black font-medium">Pertanyaan</span>
+                                                <span class="font-bold text-black">10 SOAL</span>
+                                            </div>
+                                            <div class="flex items-center justify-between pb-1">
+                                                <span class="text-black font-medium">Kelulusan</span>
+                                                <span class="font-bold text-[#B7131A]">80%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Tips -->
+                                    <div class="border border-[#B7131A] rounded-[8px] p-4 bg-white shadow-sm flex flex-col">
+                                        <h4 class="text-[13px] font-bold text-[#B7131A] mb-3">Tips</h4>
+                                        <p class="text-[12px] text-black font-medium leading-[1.6]">
+                                            Pelajari Tentang Point Point penting jaringan komputer
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Aturan & Petunjuk -->
+                                <div>
+                                    <h4 class="text-[15px] font-medium text-black mb-4">Aturan <span class="text-[#B7131A]">&</span> Petunjuk</h4>
+                                    <div class="grid grid-cols-2 gap-y-4 gap-x-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-6 h-6 rounded-full bg-[#B7131A] text-white flex items-center justify-center text-[12px] font-bold shrink-0 shadow-sm">1</div>
+                                            <span class="text-[13px] font-medium text-black">Fokus & Tenang</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-6 h-6 rounded-full bg-[#B7131A] text-white flex items-center justify-center text-[12px] font-bold shrink-0 shadow-sm">2</div>
+                                            <span class="text-[13px] font-medium text-black">Jujur & Mandiri</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-6 h-6 rounded-full bg-[#B7131A] text-white flex items-center justify-center text-[12px] font-bold shrink-0 shadow-sm">3</div>
+                                            <span class="text-[13px] font-medium text-black">Interval 24 Jam</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-6 h-6 rounded-full bg-[#B7131A] text-white flex items-center justify-center text-[12px] font-bold shrink-0 shadow-sm">4</div>
+                                            <span class="text-[13px] font-medium text-black">Koneksi Stabil</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Side (QR Code) -->
+                            <div class="w-full md:w-[45%]">
+                                <div class="border border-[#B8B8B8] rounded-[10px] p-6 flex flex-col items-center text-center justify-center bg-[#FAFAFA] h-full shadow-sm">
+                                    <h4 class="text-[13px] font-bold text-black mb-1">PINDAH KE HP</h4>
+                                    <p class="text-[12px] text-[#B8B8B8] font-medium mb-4">Scan Untuk Mengerjakan di HP</p>
+                                    
+                                    <div class="w-[180px] h-[180px] bg-white border border-[#B7131A] rounded-[12px] p-2 flex items-center justify-center mb-5 relative">
+                                        <!-- QR Code Placeholder -->
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://zep.us/" alt="QR Code" class="w-full h-full object-contain">
+                                    </div>
+                                    
+                                    <div class="w-full flex items-center gap-3 mb-4 px-6">
+                                        <div class="h-px bg-[#E5E5E5] flex-1"></div>
+                                        <span class="text-[11px] text-gray-400 font-bold uppercase tracking-wider">ATAU</span>
+                                        <div class="h-px bg-[#E5E5E5] flex-1"></div>
+                                    </div>
+                                    
+                                    <a href="https://zep.us/" target="_blank" class="text-[13px] text-[#B8B8B8] font-medium hover:text-[#B7131A] transition">Lanjut di Perangkat Ini</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Footer -->
+                    <div class="px-8 py-5 border-t border-[#B8B8B8] flex flex-col md:flex-row items-center justify-between gap-4 bg-white">
+                        <p class="text-[12px] font-medium text-black">
+                            *Membuka Platform Eksternal ZEP disarankan menggunakan Google Chrome.
+                        </p>
+                        <a href="https://zep.us/" target="_blank" class="px-8 py-2.5 bg-[#B7131A] text-white rounded-[8px] text-[13px] font-bold hover:bg-[#8A070D] transition shadow-sm whitespace-nowrap">
+                            MULAI QUIZ
+                        </a>
+                    </div>
+                </div>
             </div>
 
         </div>
