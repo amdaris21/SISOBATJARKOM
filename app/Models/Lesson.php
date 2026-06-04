@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 #[Fillable([
-    'module_id', 'title', 'slug', 'description', 'order_number', 'status',
+    'module_id', 'title', 'slug', 'description', 'order_number', 'status', 'category', 'level', 'file_path',
 ])]
 class Lesson extends Model
 {

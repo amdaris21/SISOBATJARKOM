@@ -1,40 +1,46 @@
 <?php
 
 use App\Http\Controllers\Admin\ModuleController;
+use App\Http\Controllers\Admin\LessonController;
+use App\Http\Controllers\Admin\QuizController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LessonController as UserLessonController;
+use App\Http\Controllers\QuizController as UserQuizController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
-Route::get('/lesson', function () {
-    return view('lesson');
-})->middleware(['auth', 'verified'])->name('lesson');
+Route::middleware(['auth', 'verified'])->group(function () {
+    // Tahap 12: Katalog Materi
+    Route::get('/lesson', [UserLessonController::class, 'index'])->name('lesson');
+    
+    // Tahap 13: Detail Materi & Trigger Progress
+    Route::get('/lesson/{slug}', [UserLessonController::class, 'show'])->name('lesson.show');
+    Route::post('/lesson/{id}/complete', [UserLessonController::class, 'complete'])->name('lesson.complete');
 
-Route::get('/lesson1-detail', function () {
-    return view('lesson1-detail');
-})->middleware(['auth', 'verified'])->name('lesson1-detail');
+    // Tahap 14 & 15: User Quiz ZEP & Progress
+    Route::get('/quiz', [UserQuizController::class, 'index'])->name('quiz');
+    Route::get('/quiz/{id}', [UserQuizController::class, 'show'])->name('quiz.show');
+    Route::post('/quiz/{id}/start', [UserQuizController::class, 'start'])->name('quiz.start');
+    Route::post('/quiz/{id}/complete', [UserQuizController::class, 'complete'])->name('quiz.complete');
 
-Route::get('/about', function () {
-    return view('about');
-})->middleware(['auth', 'verified'])->name('about');
+    // Tahap 16: Halaman Statis (Tentang Kami & Bantuan)
+    Route::get('/about', function () {
+        return view('about');
+    })->name('about');
 
-Route::get('/quiz', function () {
-    return view('quiz');
-})->middleware(['auth', 'verified'])->name('quiz');
-Route::get('/bantuan', function () {
-    return view('bantuan');
-})->name('bantuan');
-
-
-Route::get('/bantuan', function () {
-    return view('bantuan');
-})->middleware(['auth', 'verified'])->name('bantuan');
+    Route::get('/bantuan', function () {
+        return view('bantuan');
+    })->name('bantuan');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -51,12 +57,24 @@ Route::middleware('auth')->group(function () {
 */
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     // Dashboard Admin
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 
     // CRUD Modul — Tahap 7
     Route::resource('modules', ModuleController::class);
+
+    // CRUD Materi — Tahap 9
+    Route::resource('lessons', LessonController::class);
+
+    // CRUD Quiz — Tahap 10
+    Route::resource('quizzes', QuizController::class);
+
+    Route::get('/admin/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+
+    Route::get('/admin/kelolamateri', function () {
+        return view('admin.kelolamateri');
+    })->name('kelolamateri');
 });
 
 require __DIR__.'/auth.php';
