@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable([
-    'module_id', 'title', 'slug', 'description', 'order_number', 'status', 'category', 'level', 'file_path',
-])]
 class Lesson extends Model
 {
+    protected $fillable = [
+        'module_id', 'title', 'slug', 'description', 'order_number', 'status', 'category', 'level', 'file_path',
+    ];
     // ──────────────────────────────────────────────
     //  RELATIONSHIPS
     // ──────────────────────────────────────────────

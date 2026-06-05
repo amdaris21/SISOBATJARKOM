@@ -25,6 +25,27 @@ class DashboardController extends Controller
         // Menghitung total quiz
         $totalQuizzes = Quiz::count();
 
-        return view('admin.dashboard', compact('totalUsers', 'totalLessons', 'totalQuizzes'));
+        // Popularitas Materi (Top 4)
+        $popularLessons = Lesson::withCount('progress')
+        ->orderByDesc('progress_count')
+        ->take(4)
+        ->get();
+
+        // Keaktifan Pengguna (Dinamis berdasarkan parameter range)
+        $range = (int) request('range', 9);
+        $dailyActivity = [];
+        $dailyCounts = [];
+        for ($i = $range - 1; $i >= 0; $i--) {
+            $date = now()->subDays($i)->toDateString();
+            // We use Progress updates as a proxy for activity
+            $count = \App\Models\Progress::whereDate('updated_at', $date)->count();
+            $dailyCounts[] = $count;
+        }
+        $maxDaily = max($dailyCounts) ?: 1;
+        foreach ($dailyCounts as $count) {
+            $dailyActivity[] = max(10, round(($count / $maxDaily) * 100));
+        }
+
+        return view('admin.dashboard', compact('totalUsers', 'totalLessons', 'totalQuizzes', 'popularLessons', 'dailyActivity', 'dailyCounts', 'range'));
     }
 }

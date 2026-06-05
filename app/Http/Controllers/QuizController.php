@@ -14,19 +14,34 @@ class QuizController extends Controller
     /**
      * Menampilkan katalog quiz untuk siswa.
      */
-    public function index(): View
+    public function index(Request $request): View
     {
         $userId = Auth::id();
 
-        // Mengambil semua quiz yang dipublish
-        // beserta status quiz_attempt untuk siswa yang login
-        $quizzes = Quiz::where('status', 'published')
-            ->with(['attempts' => function ($query) use ($userId) {
-                $query->where('user_id', $userId);
-            }])
-            ->get();
+        $query = Quiz::where('status', 'published')
+            ->with(['attempts' => function ($q) use ($userId) {
+                $q->where('user_id', $userId);
+            }]);
 
-        return view('quiz', compact('quizzes'));
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('title', 'like', '%' . $search . '%')
+                  ->orWhere('description', 'like', '%' . $search . '%');
+            });
+        }
+
+        $quizzes = $query->get();
+
+        // Hitung berapa materi yang sudah diselesaikan user (untuk membuka gembok kuis)
+        $completedLessonsCount = \App\Models\Progress::where('user_id', $userId)->count();
+
+        // Hitung berapa kuis yang sudah diselesaikan user (untuk statistik UI)
+        $completedQuizCount = \App\Models\QuizAttempt::where('user_id', $userId)
+                                ->where('status', 'completed')
+                                ->count();
+
+        return view('quiz', compact('quizzes', 'completedLessonsCount', 'completedQuizCount'));
     }
 
     /**
@@ -56,7 +71,7 @@ class QuizController extends Controller
             'user_id' => Auth::id(),
             'quiz_id' => $quiz->id,
         ], [
-            'status' => 'in_progress', // menandakan sedang dikerjakan di ZEP
+            'status' => 'not_started', // sesuai dengan enum database
         ]);
 
         return response()->json([

@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Fillable([
-    'user_id', 'quiz_id', 'status', 'score', 'completed_at', 'note',
-])]
 class QuizAttempt extends Model
 {
+    protected $fillable = [
+        'user_id', 'quiz_id', 'status', 'score', 'completed_at', 'note',
+    ];
+
     /**
      * Cast attributes.
      * - score: pastikan integer (bukan string dari DB)

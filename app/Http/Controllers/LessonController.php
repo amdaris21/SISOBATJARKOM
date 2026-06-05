@@ -14,18 +14,28 @@ class LessonController extends Controller
     /**
      * Menampilkan katalog materi untuk siswa.
      */
-    public function index(): View
+    public function index(Request $request): View
     {
         $userId = Auth::id();
 
-        // Mengambil semua materi yang dipublish
-        // dan eager-load relasi progress khusus untuk user yang sedang login
-        $lessons = Lesson::where('status', 'published')
-            ->with(['progress' => function ($query) use ($userId) {
-                $query->where('user_id', $userId);
-            }])
-            ->orderBy('order_number')
-            ->get();
+        $query = Lesson::where('status', 'published')
+            ->with(['progress' => function ($q) use ($userId) {
+                $q->where('user_id', $userId);
+            }]);
+
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('title', 'like', '%' . $search . '%')
+                  ->orWhere('description', 'like', '%' . $search . '%');
+            });
+        }
+
+        if ($request->filled('category') && strtolower($request->category) !== 'semua') {
+            $query->where('category', $request->category);
+        }
+
+        $lessons = $query->orderBy('order_number')->get();
 
         return view('lesson', compact('lessons'));
     }
@@ -46,8 +56,27 @@ class LessonController extends Controller
             ->where('lesson_id', $lesson->id)
             ->exists();
 
+        // Ambil urutan seluruh lesson published untuk pagination
+        $allLessons = Lesson::where('status', 'published')
+            ->orderBy('order_number')
+            ->orderBy('id')
+            ->get();
+
+        $currentIndex = $allLessons->search(function ($item) use ($lesson) {
+            return $item->id === $lesson->id;
+        });
+
+        $previousLesson = $currentIndex > 0 ? $allLessons[$currentIndex - 1] : null;
+        $nextLesson = $currentIndex < $allLessons->count() - 1 ? $allLessons[$currentIndex + 1] : null;
+        $totalLessons = $allLessons->count();
+        $currentLessonNumber = $currentIndex + 1;
+
+        // Hitung persentase progress belajar
+        $completedCount = Progress::where('user_id', Auth::id())->count();
+        $progressPercentage = $totalLessons > 0 ? round(($completedCount / $totalLessons) * 100) : 0;
+
         // Tim frontend dapat menggunakan variabel $lesson dan $isCompleted di view ini
-        return view('lesson-detail', compact('lesson', 'isCompleted'));
+        return view('lesson-detail', compact('lesson', 'isCompleted', 'previousLesson', 'nextLesson', 'totalLessons', 'currentLessonNumber', 'progressPercentage'));
     }
 
     /**

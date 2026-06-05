@@ -11,10 +11,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'email', 'password', 'role'])]
-#[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
+    protected $fillable = ['name', 'email', 'password', 'role'];
+    protected $hidden = ['password', 'remember_token'];
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
 

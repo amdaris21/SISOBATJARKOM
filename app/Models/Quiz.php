@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable([
-    'module_id', 'title', 'description', 'zep_link', 'instruction', 'status', 'question_count', 'level',
-])]
 class Quiz extends Model
 {
+    protected $fillable = [
+        'module_id', 'title', 'description', 'zep_link', 'instruction', 'status', 'question_count', 'level',
+    ];
     // ──────────────────────────────────────────────
     //  RELATIONSHIPS
     // ──────────────────────────────────────────────

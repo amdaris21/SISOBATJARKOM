@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable([
-    'title', 'slug', 'description', 'order_number', 'status',
-])]
 class Module extends Model
 {
+    protected $fillable = [
+        'title', 'slug', 'description', 'order_number', 'status',
+    ];
     // ──────────────────────────────────────────────
     //  RELATIONSHIPS
     // ──────────────────────────────────────────────

@@ -17,7 +17,7 @@ class QuizController extends Controller
     public function index(): View
     {
         $quizzes = Quiz::with('module')->get();
-        return view('admin.quizzes.index', compact('quizzes'));
+        return view('admin.kelolaquiz', compact('quizzes'));
     }
 
     /**

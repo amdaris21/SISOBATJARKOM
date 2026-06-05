@@ -23,7 +23,7 @@ class LessonController extends Controller
             ->orderBy('order_number')
             ->get();
 
-        return view('admin.lessons.index', compact('lessons'));
+        return view('admin.kelolamateri', compact('lessons'));
     }
 
     /**

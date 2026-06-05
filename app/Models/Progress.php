@@ -2,13 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Fillable([
-    'user_id', 'lesson_id', 'is_completed', 'completed_at',
-])]
 class Progress extends Model
 {
     /**
@@ -16,6 +12,10 @@ class Progress extends Model
      * meng-auto-pluralize "progress" → "progresses" dengan benar.
      */
     protected $table = 'progress';
+
+    protected $fillable = [
+        'user_id', 'lesson_id', 'is_completed', 'completed_at',
+    ];
 
     /**
      * Cast attributes.

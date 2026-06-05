@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Fillable([
-    'lesson_id', 'type', 'title', 'content', 'media_url',
-    'embed_url', 'command', 'options', 'correct_answer', 'order_number',
-])]
 class LessonBlock extends Model
 {
+    protected $fillable = [
+        'lesson_id', 'type', 'title', 'content', 'media_url',
+        'embed_url', 'command', 'options', 'correct_answer', 'order_number',
+    ];
+
     /**
      * Cast attributes.
      * 'options' disimpan sebagai JSON di database,
